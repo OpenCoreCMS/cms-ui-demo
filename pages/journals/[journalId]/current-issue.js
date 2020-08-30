@@ -18,7 +18,7 @@ export default function JournalItemCurrentIssuePageRender({data}) {
         <div className={`maxWidthLimitedContainer ${styles.pageFlexContainer}`}>
           <div className={styles.pageAside}>Filters</div>
           <div className={styles.pageBody}>
-            <strong>Current issue contains X articles.</strong>
+            <strong>Current issue contains {data.length} articles.</strong>
             <ListOfResults data={data}></ListOfResults>
           </div>
         </div>
