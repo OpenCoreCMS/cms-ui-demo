@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useRouter } from 'next/router'
 import AppTemplate from '../components/AppTemplate'
 
@@ -5,7 +6,7 @@ import findPage from '../lib/findPage'
 
 // dynamic route handler is used to locate pages in CMS
 // or bounce to an error page
-export default function DynamicRouteHandler(req, res) {
+export default function DynamicRouteHandler({pageData}) {
   const router = useRouter();
   const { dynamic } = router.query;
   const urlSegments = dynamic;
@@ -25,17 +26,62 @@ export default function DynamicRouteHandler(req, res) {
 
   const fullPath = urlSegments.join('/');
 
-  const page = findPage(fullPath)
-  console.log('page', page);
+  if (!pageData || !pageData.url) {
+    return <AppTemplate>
+      <main>
+        <div className="readingWidthLimitedContainer textCenter">
+          <h1>404</h1>
+          <h2>The requested page could not be found.</h2>
+          <br />
+          <p>Full request path:<br /><br /><code>{fullPath}</code></p>
+        </div>
+      </main>
+    </AppTemplate>
+  }
+
+  if (!pageData.title || !pageData.content) {
+    return <AppTemplate>
+      <main>
+        <div className="readingWidthLimitedContainer textCenter">
+          <h1>Maintenance</h1>
+          <h2>The requested page is currently unavailable.</h2>
+          <br />
+          <p>Full request path:<br /><br /><code>{fullPath}</code></p>
+          <p>Please contact the administrator.</p>
+        </div>
+      </main>
+    </AppTemplate>
+  }
 
   return <AppTemplate>
     <main>
       <div className="readingWidthLimitedContainer textCenter">
-        <h1>404</h1>
-        <h2>The requested page could not be found.</h2>
-        <br />
-        <p>Full request path:<br /><br /><code>{fullPath}</code></p>
+        <h1>{pageData.title}</h1>
+        <p>{pageData.description}</p>
       </div>
     </main>
   </AppTemplate>
+
+}
+
+
+
+export async function getInitialProps() {
+  return {
+    props: {
+      data: [],
+    },
+  }
+}
+
+export async function getServerSideProps() {
+  const { data } = await axios.get(
+    `http://localhost:3000/api/v1/pages/getPage/pageId`
+  );
+  // console.log(data);
+  return {
+    props: {
+      pageData: data,
+    },
+  };
 }
