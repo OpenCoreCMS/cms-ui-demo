@@ -14,23 +14,23 @@ export default function JournalItemPageRender() {
           <h1 className={styles.title}>
             Journal page
           </h1>
-          <p>JournalID: {journalId} </p>
+          <p>Journal ID: {journalId} </p>
 
           <hr />
 
-          <Link href="/journal/[jouralId]" as={`/journal/${journalId}`}>
+          <Link href="/journals/[jouralId]" as={`/journals/${journalId}`}>
             <a>Journal home</a>
           </Link>
           {' | '}
-          <Link href="/journal/[jouralId]/current-issue" as={`/journal/${journalId}/current-issue`}>
+          <Link href="/journals/[jouralId]/current-issue" as={`/journals/${journalId}/current-issue`}>
             <a>Current issue</a>
           </Link>
           {' | '}
-          <Link href="/journal/[jouralId]/all-issues" as={`/journal/${journalId}/all-issues`}>
+          <Link href="/journals/[jouralId]/all-issues" as={`/journals/${journalId}/all-issues`}>
             <a>All issues</a>
           </Link>
           {' | '}
-          <Link href="/journal/[jouralId]/most-read" as={`/journal/${journalId}/most-read`}>
+          <Link href="/journals/[jouralId]/most-read" as={`/journals/${journalId}/most-read`}>
             <a>Most read</a>
           </Link>
 
