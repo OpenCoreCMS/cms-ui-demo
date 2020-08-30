@@ -18,38 +18,35 @@ export default function AppTemplate({
 
       <header className={styles.header}>
         <div className="maxWidthLimitedContainer">
-          <nav className="navLeft">
-            <span>
-              <img src="/public/opp-logo-500px.png" alt="Open Publishing Platform logo" width="30" />
-              OPP Demo
-            </span>
-            {' | '}
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-            {' | '}
-            <Link href="/subjects">
-              <a>Browse by subject</a>
-            </Link>
-            {' | '}
-            <Link href="/journals">
-              <a>Journals</a>
-            </Link>
-            {' | '}
-            <Link href="/books">
-              <a>Books</a>
-            </Link>
-            {' | '}
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </nav>
+          <div className="flexContainer">
+            <nav className={styles.navLeft}>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+              {' | '}
+              <Link href="/subjects">
+                <a className="hide">Browse by subject</a>
+              </Link>
 
-          <nav className="navRight">
-            <Link href="/signin">
-              <a>Sign in</a>
-            </Link>
-          </nav>
+              <Link href="/journals">
+                <a>Journals</a>
+              </Link>
+              {' | '}
+              <Link href="/books">
+                <a className="hide">Books</a>
+              </Link>
+
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </nav>
+
+            <span className={styles.navRight}>
+              <Link href="/signin">
+                <a className="hide">Sign in</a>
+              </Link>
+            </span>
+          </div>
         </div>
       </header>
 
@@ -59,22 +56,34 @@ export default function AppTemplate({
         <div className="maxWidthLimitedContainer">
 
           <div className={styles.row}>
-            <Link href="/legal/terms-of-use">
+            <Link href="/contact-and-help">
               <a>
-              Terms of use
+                Contact and help
               </a>
             </Link>
-            {' | '}
+            &nbsp; {' | '} &nbsp;
+            <Link href="/legal/accessibility">
+              <a>
+                Accessibility
+              </a>
+            </Link>
+            &nbsp; {' | '} &nbsp;
+            <Link href="/legal/terms-of-use">
+              <a>
+                Terms of use
+              </a>
+            </Link>
+            &nbsp; {' | '} &nbsp;
             <Link href="/legal/privacy-policy">
               <a>
-              Privacy policy
+                Privacy policy
               </a>
             </Link>
           </div>
 
           <div className={styles.row}>
-            <a href="https://OpenPublishingPlatform.com" target="_blank">
-              Powered by Open Publishing Platform
+            <a href="https://OpenPublishingPlatform.com" target="_blank" title="Open Publishing Platform">
+              Powered by OPP
             </a>
           </div>
 

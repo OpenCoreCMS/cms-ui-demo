@@ -7,9 +7,10 @@ export default function JournalIndexPageRender() {
       <div className="mastheadContainer">
         <div className="readingWidthLimitedContainer">
           <h1>
-            Our journals
+            Journal content
           </h1>
-          <p>At ExamplePubHouse we publish content from over 50 journals.</p>
+          <p>In the Open Publishing Platform demo site we publish Open Access content
+          from over 50 journals.</p>
         </div>
       </div>
 
@@ -17,13 +18,13 @@ export default function JournalIndexPageRender() {
         <div className="readingWidthLimitedContainer">
           <ul>
             <li>
-              <a href="/journal/american-journal-of-countless-examples">American Journal of Countless Examples</a>
+              <a href="/journals/american-journal-of-countless-examples">American Journal of Countless Examples</a>
             </li>
             <li>
-              <a href="/journal/british-journal-of-practical-puns">British Journal of Practical Puns</a>
+              <a href="/journals/british-journal-of-practical-puns">British Journal of Practical Puns</a>
             </li>
             <li>
-              <a href="/journal/journal-of-believable-research">Journal of Believable Research</a>
+              <a href="/journals/journal-of-believable-research">Journal of Believable Research</a>
             </li>
           </ul>
         </div>

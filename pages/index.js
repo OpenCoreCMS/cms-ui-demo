@@ -8,8 +8,7 @@ export default function HomePageRender() {
         <div className="maxWidthLimitedContainer textCenter">
           <img src="/public/opp-symbol-800px.png" width="300" />
           <h1 className={styles.title}>
-            Open Publishing Platform<br />
-            Demo Site
+            OPP Demo Platform
           </h1>
 
           <form action="/search">
@@ -22,7 +21,7 @@ export default function HomePageRender() {
           <br /><br />
 
           <div className={styles.grid}>
-            <a href="/journal" className={styles.card}>
+            <a href="/journals" className={styles.card}>
               <h3>Published Journals &rsaquo;</h3>
               <p>See example journals published with Open Publishing Platform.</p>
             </a>
