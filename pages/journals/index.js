@@ -5,7 +5,7 @@ export default function JournalIndexPageRender() {
   return (
     <AppTemplate title="Our journals - OPP Demo">
       <div className="mastheadContainer">
-        <div className="readingWidthLimitedContainer">
+        <div className="maxWidthLimitedContainer">
           <h1>
             Journal content
           </h1>
@@ -15,7 +15,7 @@ export default function JournalIndexPageRender() {
       </div>
 
       <main>
-        <div className="readingWidthLimitedContainer">
+        <div className="maxWidthLimitedContainer">
           <ul>
             <li>
               <a href="/journals/american-journal-of-countless-examples">American Journal of Countless Examples</a>

@@ -12,7 +12,7 @@ export default function SearchPageRender() {
           <h1>
             Search results
           </h1>
-          <p>Found 79 hits for "{query}"</p>
+          <p>Found X hits for "{query}"</p>
         </div>
       </div>
 

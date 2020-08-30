@@ -1,17 +1,9 @@
-.xxxcontainer {
-  min-height: 100vh;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+.pageFlexContainer { flex: 1; display: flex; flex-direction: row; justify-content: space-between;}
+.pageAside { flex: 0; min-width: 300px; max-width: 300px}
+.pageBody { flex: 1; max-width: 900px}
+
+@media only screen and (max-width: 900px) {
+  .pageAside {display: none}
 }
 
-.xxxmain {
-  padding: 2rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-}
+.pageAside {border: 1px solid #eee; border-radius: 3px; padding: 1rem; margin: -1rem 1rem 0 0;}

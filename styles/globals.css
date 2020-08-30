@@ -26,7 +26,7 @@ li { padding: 5px 0 }
 .mastheadContainer {padding: 2rem 1rem; width: 100%; background-image: linear-gradient(#fff, #f7f7f7);}
 .mastheadContainer h1 {margin-bottom: 0}
 .maxWidthLimitedContainer {width: 100%; max-width: 1200px; margin: 0 auto}
-.readingWidthLimitedContainer {width: 100%; max-width: 700px; margin: 0 auto}
+.readingWidthLimitedContainer {width: 100%; max-width: 800px; margin: 0 auto}
 
 /* containers */
 .container {
