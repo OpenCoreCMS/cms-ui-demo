@@ -28,17 +28,14 @@ export default function JournalItemCurrentIssuePageRender({data}) {
   )
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      // String variant:
-      '/journals/[journalId]/current-issue',
-      // Object variant:
-      { params: { journalId: 'test-journal' } },
-    ],
-    fallback: true,
-  }
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       '/journals/[journalId]/current-issue',
+//     ],
+//     fallback: true,
+//   }
+// }
 
 export async function getInitialProps() {
   return {
@@ -48,7 +45,7 @@ export async function getInitialProps() {
   }
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await axios.get(
     `http://localhost:3000/api/v1/journals/getArticles`
   );
