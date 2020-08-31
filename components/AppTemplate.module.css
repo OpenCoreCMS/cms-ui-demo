@@ -18,3 +18,8 @@
 .footer .row { display: flex; justify-content: center; align-items: center; margin: 10px 0}
 .footer a { color: #4571a5 }
 .footer a:hover, .footer a:focus, .footer a:active  { color: #1f4b80;}
+
+@media print {
+  .footer {display: none;}
+  .header {display: none;}
+}
