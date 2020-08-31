@@ -56,9 +56,9 @@ export default function AppTemplate({
         <div className="maxWidthLimitedContainer">
 
           <div className={styles.row}>
-            <Link href="/contact-and-help">
+            <Link href="/contact-us">
               <a>
-                Contact and help
+                Contact us
               </a>
             </Link>
             &nbsp; {' | '} &nbsp;

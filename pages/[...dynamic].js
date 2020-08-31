@@ -39,7 +39,7 @@ export default function DynamicRouteHandler({pageData}) {
     </AppTemplate>
   }
 
-  if (!pageData.title || !pageData.content) {
+  if (!pageData.title || !pageData.content || !pageData.description) {
     return <AppTemplate>
       <main>
         <div className="readingWidthLimitedContainer textCenter">
@@ -53,11 +53,17 @@ export default function DynamicRouteHandler({pageData}) {
     </AppTemplate>
   }
 
-  return <AppTemplate>
-    <main>
-      <div className="readingWidthLimitedContainer textCenter">
+  return <AppTemplate title={pageData.title}>
+    <div className="mastheadContainer">
+      <div className="readingWidthLimitedContainer">
         <h1>{pageData.title}</h1>
         <p>{pageData.description}</p>
+      </div>
+    </div>
+
+    <main>
+      <div className="readingWidthLimitedContainer">
+        {JSON.stringify(pageData.content)}
       </div>
     </main>
   </AppTemplate>
@@ -74,11 +80,27 @@ export async function getInitialProps() {
   }
 }
 
-export async function getServerSideProps() {
-  const { data } = await axios.get(
-    `http://localhost:3000/api/v1/pages/getPage/pageId`
-  );
+export async function getServerSideProps({ params }) {
+  const urlSegments = params.dynamic;
+  const fullPath = urlSegments.join('/');
+  const escapedFullPath = encodeURIComponent(fullPath);
+
+  if (fullPath.includes('favicon')) {
+    return { props: {pageData: {}}};
+  }
+
+  const targetUrl = `http://localhost:3000/api/v1/pages/getPage/${escapedFullPath}`;
+  // console.log('targetUrl', targetUrl);
+
+  const { data } = await axios.get(targetUrl);
   // console.log(data);
+  if (data.isAxiosError) {
+    return {
+      props: {
+        pageData: {},
+      },
+    };
+  }
   return {
     props: {
       pageData: data,

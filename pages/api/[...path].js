@@ -3,7 +3,9 @@ const axios = require('axios');
 const bffBaseUrl = 'http://localhost:4000/api';
 
 export default function handler(req, res) {
-  const urlSegments = req.query.path;
+  const urlSegments = req.query.path.map((x) => {
+    return encodeURIComponent(x);
+  });
 
   if (!Array.isArray(urlSegments) || !urlSegments.length) {
     return res.status(500).send('Bad request');
@@ -20,8 +22,9 @@ export default function handler(req, res) {
     fullData = response.data.data;
   })
   .catch(function (error) {
-    console.log(error);
-    return res.status(500).send('Bad response from API');
+    console.log(error.request.res.statusCode);
+    // return res.status(500).send('Bad response from API');
+    fullData = error
   })
   .then(function () {
     return res.status(200).json(fullData);
