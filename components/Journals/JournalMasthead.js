@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import styles from './JournalHeader.module.css'
+import styles from './JournalMasthead.module.css'
 
-export default function JournalHeader({ journalData }) {
+export default function JournalMastheadComponent({ journalData }) {
   return <div className={`mastheadContainer ${styles.mastheadContainer}`}>
     <div className="maxWidthLimitedContainer">
       <h1 className={styles.title}>

@@ -1,17 +1,17 @@
 import axios from 'axios'
 import AppTemplate from '../../../components/AppTemplate/AppTemplate'
-import JournalHeader from '../../../components/headers/JournalHeader'
-import FeaturedItems from '../../../components/common/FeaturedItems'
+import JournalMasthead from '../../../components/Journals/JournalMasthead'
+import FeaturedItems from '../../../components/Blocks/FeaturedItems'
 import GridLayoutTwoColumnsEven from '../../../components/GridLayout/GridLayoutTwoColumnsEven'
 import GridLayoutTwoColumnsOdd from '../../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
-import JournalQuickInfoPane from '../../../components/common/JournalQuickInfoPane'
-import Feed from '../../../components/common/Feed'
+import JournalQuickInfoPane from '../../../components/Journals/JournalQuickInfoPane'
+import Feed from '../../../components/Blocks/Feed'
 
 export default function JournalItemPageRender({ journalData }) {
   return (
     <AppTemplate title={`${journalData.name} - Journal home - OPP Demo`}>
-      <JournalHeader journalData={journalData}></JournalHeader>
+      <JournalMasthead journalData={journalData}></JournalMasthead>
 
       <main>
         <GridLayoutTwoColumnsOdd>

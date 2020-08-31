@@ -4,9 +4,9 @@ import axios from "axios";
 import AppTemplate from '../../../components/AppTemplate/AppTemplate'
 import GridLayoutTwoColumnsOdd from '../../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
-import ListOfResults from '../../../components/common/ListOfResults'
-import SearchResultsFilters from '../../../components/common/SearchResultsFilters'
-import JournalHeader from '../../../components/headers/JournalHeader'
+import ListOfResults from '../../../components/Blocks/ListOfResults'
+import SearchResultsFilters from '../../../components/Blocks/SearchResultsFilters'
+import JournalMasthead from '../../../components/Journals/JournalMasthead'
 
 export default function JournalItemCurrentIssuePageRender({data}) {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function JournalItemCurrentIssuePageRender({data}) {
 
   return (
     <AppTemplate title="Current issue - Journal Name - Publisher Name">
-      <JournalHeader journalData={journalData}></JournalHeader>
+      <JournalMasthead journalData={journalData}></JournalMasthead>
 
       <main>
         <GridLayoutTwoColumnsOdd>

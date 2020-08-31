@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import AppTemplate from '../components/AppTemplate/AppTemplate'
 import GridLayoutTwoColumnsOdd from '../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
-import ListOfResults from '../components/common/ListOfResults'
-import SearchResultsFilters from '../components/common/SearchResultsFilters'
+import ListOfResults from '../components/Blocks/ListOfResults'
+import SearchResultsFilters from '../components/Blocks/SearchResultsFilters'
 
 export default function SearchPageRender({ searchResults }) {
   const router = useRouter();
