@@ -1,7 +1,9 @@
+import axios from 'axios'
+import Link from 'next/link'
 import AppTemplate from '../../components/AppTemplate'
 import styles from '../../styles/Journal.module.css'
 
-export default function JournalIndexPageRender() {
+export default function JournalIndexPageRender({ allJournals }) {
   return (
     <AppTemplate title="Our journals - OPP Demo">
       <div className="mastheadContainer">
@@ -17,18 +19,34 @@ export default function JournalIndexPageRender() {
       <main>
         <div className="maxWidthLimitedContainer">
           <ul>
-            <li>
-              <a href="/journals/american-journal-of-countless-examples">American Journal of Countless Examples</a>
-            </li>
-            <li>
-              <a href="/journals/british-journal-of-practical-puns">British Journal of Practical Puns</a>
-            </li>
-            <li>
-              <a href="/journals/journal-of-believable-research">Journal of Believable Research</a>
-            </li>
+            {allJournals.map((journal) => {
+              return <li key={journal.id}>
+                <Link href="/journals/[journalId]" as={`/journals/${journal.id}`}>
+                  <a>{journal.name}</a>
+                </Link>
+              </li>
+            })}
+
           </ul>
         </div>
       </main>
     </AppTemplate>
   )
+}
+
+
+export async function getServerSideProps({ query }) {
+  const phrase = query.phrase;
+  let targetUrl = `http://localhost:3000/api/v1/journals/getAllJournals`;
+  if (typeof phrase === 'string' && phrase.length) {
+    targetUrl += `?phrase=${phrase}`;
+  }
+
+  const { data } = await axios.get(targetUrl);
+  // console.log(data);
+  return {
+    props: {
+      allJournals: data,
+    },
+  };
 }
