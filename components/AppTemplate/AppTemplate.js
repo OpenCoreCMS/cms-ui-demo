@@ -1,7 +1,9 @@
 import Head from 'next/head'
 
-import AppFooter from './AppFooter'
-import AppHeader from './AppHeader'
+import AppHeaderForPrint from './AppHeaderForPrint'
+import AppHeaderForScreen from './AppHeaderForScreen'
+import AppFooterForScreen from './AppFooterForScreen'
+import AppBreadcrumbs from './AppBreadcrumbs'
 
 export default function AppTemplateComponent({
   children,
@@ -16,11 +18,14 @@ export default function AppTemplateComponent({
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <AppHeader></AppHeader>
+      <AppHeaderForPrint></AppHeaderForPrint>
+      <AppHeaderForScreen></AppHeaderForScreen>
+
+      <AppBreadcrumbs></AppBreadcrumbs>
 
       {children}
 
-      <AppFooter></AppFooter>
+      <AppFooterForScreen></AppFooterForScreen>
     </div>
   )
 }
