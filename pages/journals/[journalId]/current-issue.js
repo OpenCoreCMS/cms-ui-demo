@@ -45,9 +45,11 @@ export async function getInitialProps() {
   }
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ params }) {
+  const journalId = params.journalId;
+
   const { data } = await axios.get(
-    `http://localhost:3000/api/v1/journals/getArticles`
+    `http://localhost:3000/api/v1/journals/${journalId}/getArticles`
   );
   // console.log(data);
   return {
@@ -56,8 +58,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
-// import useSWR from 'swr'
-// const fetcher = (url) => fetch(url).then((res) => res.json())
-// let data = []
-// const { data, error } = useSWR('/api/v1/journals/getArticles', fetcher)
