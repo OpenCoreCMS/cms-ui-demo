@@ -13,7 +13,7 @@ export default function HomePageRender() {
 
           <form action="/search">
             <div className={styles.grid}>
-              <input className={styles.jumbotronSearchInput} type="search" name="query" placeholder="Search Open Access content" />
+              <input className={styles.jumbotronSearchInput} type="search" name="phrase" placeholder="Search Open Access content" />
               <input className={styles.jumbotronSearchSubmit} type="submit" value="Run search" />
             </div>
           </form>

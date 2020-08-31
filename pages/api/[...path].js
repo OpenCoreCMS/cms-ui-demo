@@ -11,8 +11,10 @@ export default function handler(req, res) {
     return res.status(500).send('Bad request');
   }
 
+  const queryString = req.query.phrase ? `?phrase=${req.query.phrase}` : null;
+
   const fullPath = urlSegments.join('/');
-  const fullUrl = `${bffBaseUrl}/${fullPath}`;
+  const fullUrl = `${bffBaseUrl}/${fullPath}${queryString ? queryString : ''}`;
   console.log(`Fetching the data from API (via UI app proxy): ${fullUrl}`);
 
   let fullData;
@@ -22,7 +24,7 @@ export default function handler(req, res) {
     fullData = response.data.data;
   })
   .catch(function (error) {
-    console.log(error.request.res.statusCode);
+    // console.log(error.request.res.statusCode);
     // return res.status(500).send('Bad response from API');
     fullData = error
   })
