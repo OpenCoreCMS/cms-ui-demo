@@ -19,6 +19,7 @@
     ],
     "rules": {
       "react/prop-types": 0,
-      "react/react-in-jsx-scope": 0
+      "react/react-in-jsx-scope": 0,
+      "react/jsx-no-target-blank": [1, { "allowReferrer": true }]
     }
 }

@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import styles from './AppTemplate.module.css'
 
-export default function AppTemplate({
+export default function AppTemplateComponent({
   children,
   title = 'OPP Demo',
 }) {
@@ -82,7 +82,7 @@ export default function AppTemplate({
           </div>
 
           <div className={styles.row}>
-            <a href="https://OpenPublishingPlatform.com" target="_blank" title="Open Publishing Platform">
+            <a href="https://OpenPublishingPlatform.com" target="_blank" rel="noopener" title="Open Publishing Platform">
               Powered by OPP
             </a>
           </div>

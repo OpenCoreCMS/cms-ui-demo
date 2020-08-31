@@ -1,14 +1,9 @@
 import axios from 'axios'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import AppTemplate from '../../../components/AppTemplate'
 import JournalHeader from '../../../components/headers/JournalHeader'
 import styles from '../../../styles/Journal.module.css'
 
 export default function JournalItemPageRender({ journalData }) {
-  const router = useRouter();
-  const { journalId } = router.query;
-
   return (
     <AppTemplate>
       <JournalHeader
@@ -26,7 +21,6 @@ export default function JournalItemPageRender({ journalData }) {
     </AppTemplate>
   )
 }
-
 
 export async function getServerSideProps({ params }) {
   const journalId = params.journalId;

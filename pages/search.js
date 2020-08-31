@@ -13,7 +13,7 @@ export default function SearchPageRender({ searchResults }) {
       <div className="mastheadContainer">
         <div className="maxWidthLimitedContainer">
           <h1>Search results</h1>
-          <p>Found {searchResults.total} hits for phrase "{phrase}"</p>
+          <p>Found {searchResults.total} hits for phrase &quot;{phrase}&quot;</p>
         </div>
       </div>
 
@@ -21,7 +21,7 @@ export default function SearchPageRender({ searchResults }) {
         <div className={`maxWidthLimitedContainer ${styles.pageFlexContainer}`}>
           <div className={styles.pageAside}>Filters</div>
           <div className={styles.pageBody}>
-            <strong>Found {searchResults.total} hits for phrase "{phrase}"</strong>
+            <strong>Found {searchResults.total} hits for phrase &quot;{phrase}&quot;</strong>
             <ListOfResults data={searchResults.results}></ListOfResults>
           </div>
         </div>

@@ -2,8 +2,6 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import AppTemplate from '../components/AppTemplate'
 
-import findPage from '../lib/findPage'
-
 // dynamic route handler is used to locate pages in CMS
 // or bounce to an error page
 export default function DynamicRouteHandler({pageData}) {

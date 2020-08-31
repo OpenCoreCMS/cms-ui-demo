@@ -2,10 +2,7 @@ import Link from 'next/link'
 
 import styles from './ListOfResults.module.css'
 
-export default function AppTemplate({
-  children,
-  data = [],
-}) {
+export default function ListOfResultsComponent({ data = [] }) {
   const x = data.map((item) => (
     <li className={styles.result} key={item.id}>
       <Link href="/journals/journalId/article/[itemId]" as={`/journals/journalId/article/${item.id}`}>

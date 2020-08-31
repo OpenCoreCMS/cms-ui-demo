@@ -1,10 +1,7 @@
 import Link from 'next/link'
 import styles from './JournalHeader.module.css'
 
-export default function JournalHeader({
-  children,
-  journalId
-}) {
+export default function JournalHeader({ journalId }) {
   return <div className="mastheadContainer">
     <div className="maxWidthLimitedContainer">
       <h1 className={styles.title}>
