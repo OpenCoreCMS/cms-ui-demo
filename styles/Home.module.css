@@ -19,7 +19,7 @@
   background-color: rgba(255,255,255,0.2)
 }
 
-.card:hover, .card:focus, .card:active { color: #0070f3; border-color: #0070f3; background-color: rgba(255,255,255,0.8)}
+.card:hover, .card:focus, .card:active { /*color: #0070f3;*/ color: #047; border-color: #0070f3; background-color: rgba(255,255,255,0.9); text-decoration: none}
 .card h3 { margin: 0 0 1rem 0; font-size: 1.3rem; }
 .card p { margin: 0; font-size: 1.15rem; line-height: 1.5; }
 
