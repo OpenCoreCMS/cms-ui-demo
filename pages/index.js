@@ -1,4 +1,5 @@
-import AppTemplate from '../components/AppTemplate'
+import AppTemplate from '../components/AppTemplate/AppTemplate'
+import SearchInputJumbotron from '../components/SearchInput/SearchInputJumbotron'
 import styles from '../styles/Home.module.css'
 
 export default function HomePageRender() {
@@ -11,12 +12,7 @@ export default function HomePageRender() {
             OPP Demo Platform
           </h1>
 
-          <form action="/search">
-            <div className={styles.grid}>
-              <input className={styles.jumbotronSearchInput} type="search" name="phrase" placeholder="Search Open Access content" />
-              <input className={styles.jumbotronSearchSubmit} type="submit" value="Run search" />
-            </div>
-          </form>
+          <SearchInputJumbotron></SearchInputJumbotron>
 
           <br /><br />
 

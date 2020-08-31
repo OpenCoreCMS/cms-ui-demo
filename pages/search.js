@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import AppTemplate from '../components/AppTemplate'
+import AppTemplate from '../components/AppTemplate/AppTemplate'
+import GridLayoutTwoColumnsOdd from '../components/GridLayout/GridLayoutTwoColumnsOdd'
+import GridLayoutTwoColumnsOddStyles from '../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
 import ListOfResults from '../components/common/ListOfResults'
 import SearchResultsFilters from '../components/common/SearchResultsFilters'
-import styles from '../styles/Journal.module.css'
 
 export default function SearchPageRender({ searchResults }) {
   const router = useRouter();
@@ -18,17 +19,19 @@ export default function SearchPageRender({ searchResults }) {
         </div>
       </div>
 
-      <main className={styles.main}>
-        <div className={`maxWidthLimitedContainer ${styles.pageFlexContainer}`}>
-          <div className={styles.pageBody}>
+      <main>
+        <GridLayoutTwoColumnsOdd>
+          <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
             <strong>Found {searchResults.total} hits for phrase &quot;{phrase}&quot;</strong>
             <ListOfResults data={searchResults.results}></ListOfResults>
           </div>
 
-          <div className={styles.pageAside}>
-            <SearchResultsFilters aggs={searchResults.aggs}></SearchResultsFilters>
+          <div className={GridLayoutTwoColumnsOddStyles.gridAside}>
+            <div className="panel">
+              <SearchResultsFilters aggs={searchResults.aggs}></SearchResultsFilters>
+            </div>
           </div>
-        </div>
+        </GridLayoutTwoColumnsOdd>
       </main>
     </AppTemplate>
   )

@@ -1,7 +1,6 @@
 import axios from 'axios'
 import Link from 'next/link'
-import AppTemplate from '../../components/AppTemplate'
-// import styles from '../../styles/Journal.module.css'
+import AppTemplate from '../../components/AppTemplate/AppTemplate'
 
 export default function JournalIndexPageRender({ allJournals }) {
   return (

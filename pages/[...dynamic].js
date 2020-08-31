@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import AppTemplate from '../components/AppTemplate'
+import AppTemplate from '../components/AppTemplate/AppTemplate'
 import BlockRenderer from '../components/BlockRenderer'
 
 // dynamic route handler is used to locate pages in CMS

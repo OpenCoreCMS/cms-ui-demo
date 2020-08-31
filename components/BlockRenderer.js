@@ -5,7 +5,8 @@ function renderHtmlBlock(block) {
 }
 
 function renderFeedBlock(block) {
-  return <div>
+  return <div className="wip">
+    <p>I don&apos;t know how to render feeds yet :(<br />Have some raw block data in the meantime.</p>
     <pre>{JSON.stringify(block, null, 2)}</pre>
   </div>
 }

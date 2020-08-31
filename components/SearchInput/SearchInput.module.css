@@ -1,0 +1,25 @@
+.jumbotronSearchContainer {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  max-width: 840px; margin: 0 auto; margin-top: 3rem;
+}
+
+
+.jumbotronSearchInput, .jumbotronSearchSubmit {
+  border: 1px solid #fff; font-size: 1rem;
+}
+
+.jumbotronSearchInput {
+  flex-basis: 70%;
+  line-height: 20px; height: 40px; padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 5px 0 0 5px;
+}
+
+.jumbotronSearchSubmit {
+  flex-basis: 20%;
+  height: 42px; padding: 10px;
+  background: #2174f4;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  border-width: 1px 1px 1px 0;
+}

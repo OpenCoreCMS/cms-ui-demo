@@ -1,7 +1,0 @@
-.gridRow {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.gridRow > * {flex: 1; min-width: 48%; max-width: 49%;}

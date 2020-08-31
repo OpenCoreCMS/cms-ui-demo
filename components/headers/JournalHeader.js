@@ -16,10 +16,10 @@ export default function JournalHeader({ journalData }) {
           <a className={styles.tab}>Current issue</a>
         </Link>
         <Link href="/journals/[jouralId]/all-issues" as={`/journals/${journalData.id}/all-issues`}>
-          <a className={styles.tab}>All issues</a>
+          <a className={`${styles.tab} wip`}>All issues</a>
         </Link>
-        <Link href="/journals/[jouralId]/most-read" as={`/journals/${journalData.id}/most-read`}>
-          <a className={styles.tab}>Most read</a>
+        <Link href="/journals/[jouralId]/metrics" as={`/journals/${journalData.id}/metrics`}>
+          <a className={`${styles.tab} wip`}>Metrics</a>
         </Link>
       </nav>
     </div>

@@ -10,8 +10,13 @@ body {background-color: #eee}
 /* typography */
 a { color: #07f; text-decoration: none; }
 a:hover, a:focus, a:active { color: #036; text-decoration: underline; }
+.wip { color: rgba(0,0,0,0.6); background: rgba(255,235,0,0.3); text-decoration: none; cursor: default; border: 1px dashed rgba(255,52,52,0.4)}
 
 h1 { margin: 0 0 2rem; line-height: 1.15; font-size: 3rem; }
+h2 { margin: 0 0 2rem; line-height: 1.15; font-size: 2rem; }
+h3 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.3rem; }
+
+hr { height:1px; display: block; background: #eee; border: 0 }
 
 code { background: #fafafa; border-radius: 5px; padding: 0.5rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
@@ -40,4 +45,9 @@ main {
   padding: 2rem 1rem; display: flex; flex: 1; width: 100%;
   flex-direction: column; justify-content: flex-start; align-items: flex-start;
   background-color: white;
+}
+
+.panel {
+  border: 1px solid #eee; border-radius: 3px; padding: 1rem;
+  background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
 }
