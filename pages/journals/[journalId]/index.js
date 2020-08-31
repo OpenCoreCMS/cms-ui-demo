@@ -57,10 +57,8 @@ export default function JournalItemPageRender({ journalData }) {
                 <Feed></Feed>
               </div>
             </GridLayoutTwoColumns>
-
-            <pre className="hide">{JSON.stringify(journalData, null, 2)}</pre>
-
           </div>
+
           <div className={styles.pageAside}>
             <div className="textCenter">
               <img src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />

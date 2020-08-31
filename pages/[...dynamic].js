@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import AppTemplate from '../components/AppTemplate'
+import BlockRenderer from '../components/BlockRenderer'
 
 // dynamic route handler is used to locate pages in CMS
 // or bounce to an error page
@@ -61,7 +62,7 @@ export default function DynamicRouteHandler({pageData}) {
 
     <main>
       <div className="readingWidthLimitedContainer">
-        {JSON.stringify(pageData.content)}
+        <BlockRenderer blocks={pageData.content} debug={false}></BlockRenderer>
       </div>
     </main>
   </AppTemplate>
