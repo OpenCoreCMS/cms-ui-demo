@@ -19,7 +19,7 @@ export default function JournalItemPageRender({ journalData }) {
 
             <h2>About this journal</h2>
             <p>{journalData.description}</p>
-            <p><a href="#">More information about this journal</a></p>
+            <p><a className="wip" href="#">More information about this journal</a></p>
 
             <br /><hr /><br />
 

@@ -26,7 +26,7 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       <br />
       <strong>Publishing dates:</strong> 2004-present
       <br />
-      <strong>Publisher:</strong> <a target="_blank" rel="noopener" href={journalData.publisher.url}>{journalData.publisher.name}</a>
+      <strong>Publisher:</strong> <a className="linkExternal" target="_blank" rel="noopener" href={journalData.publisher.url}>{journalData.publisher.name}</a>
     </p>
 
     <hr />
@@ -35,10 +35,10 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       <strong>Chief Editor: </strong> Professor John Doe, Institute of Science
     </p>
     <p>
-      <a href="#">Editorial board</a>
+      <a className="wip" href="#">Editorial board</a>
     </p>
     <p>
-      <a href="#">Author guidelines</a>
+      <a className="wip" href="#">Author guidelines</a>
     </p>
 
     <hr />
@@ -47,7 +47,7 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       This journal has been published under other titles in the past.
       <br />
       <br />
-      <a href="#">View this journal's title history</a>
+      <a className="wip" href="#">View this journal's title history</a>
     </p>
 
     <hr />

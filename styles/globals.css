@@ -1,33 +1,29 @@
 * { box-sizing: border-box; }
-html, body {
-  padding: 0; margin: 0; font-size: 16px; line-height: 1.15;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-/* body {background-color: #ffffe7} */
-body {background-color: #eee}
+html, body { background-color: #eee; padding: 0; margin: 0; font-size: 16px; line-height: 1.15; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; }
 
 /* typography */
-a { color: #2390d6; text-decoration: none; }
-a:hover, a:focus, a:active { color: #0a5c9a; text-decoration: underline; }
-.wip { color: rgba(0,0,0,0.15); text-decoration: none; cursor: default; border: 1px dotted rgba(165,10,10,0.2)}
-
 h1 { margin: 0 0 2rem; line-height: 1.15; font-size: 3rem; }
 h2 { margin: 0 0 2rem; line-height: 1.15; font-size: 2rem; }
 h3 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.3rem; }
 h4 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.1rem; }
 
+a { color: #2390d6; text-decoration: none; }
+a:hover, a:focus, a:active { color: #0a5c9a; text-decoration: underline; }
+
+.linkExternal:hover, .linkExternal:focus, .linkExternal:active {
+  color: #b13445 !important; text-decoration-line: underline; text-decoration-style: dashed;
+}
+.linkExternal::after { content: " ➲"; }
+
+/* standard elements */
 hr { height:1px; display: block; background: #eee; border: 0 }
 
-code { background: #fafafa; border-radius: 5px; padding: 0.5rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+code { font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  background: #fafafa; border-radius: 5px; padding: 0.5rem; }
 
 li { padding: 5px 0 }
 
-/* utils */
-.hide {display: none}
+/* util classes */
 .flexContainer {display: flex;}
 .textCenter {text-align: center; align-content: center;}
 .mastheadContainer {padding: 2rem 1rem; width: 100%; background-image: linear-gradient(#fff, #f7f7f7);}
@@ -35,12 +31,10 @@ li { padding: 5px 0 }
 .maxWidthLimitedContainer {width: 100%; max-width: 1200px; margin: 0 auto}
 .readingWidthLimitedContainer {width: 100%; max-width: 800px; margin: 0 auto}
 
-/* containers */
 .container {
   min-height: 100vh; display: flex; flex-direction: column;
   justify-content: flex-start; align-items: flex-start;
 }
-
 
 main {
   padding: 2rem 1rem; display: flex; flex: 1; width: 100%;
@@ -48,7 +42,17 @@ main {
   background-color: white;
 }
 
+/* visual classes */
 .panel {
   border: 1px solid #eee; border-radius: 3px; padding: 1rem;
   background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
 }
+
+/* debug classes */
+.wip {
+  text-decoration: none; cursor: default;
+  /* color: rgba(132,0,0,0.25); */
+  color: rgba(0,119,132,0.25);
+}
+
+.hide {display: none}
