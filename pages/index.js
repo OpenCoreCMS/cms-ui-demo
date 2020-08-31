@@ -7,7 +7,7 @@ export default function HomePageRender() {
     <AppTemplate title="Home - OPP Demo">
       <main className={styles.main}>
         <div className="maxWidthLimitedContainer textCenter">
-          <img src="/public/opp-symbol-old.png" width="300" />
+          <img src="/public/oppdp-icon-white-500.png" width="400" />
           <h1 className={styles.title}>
             OPP Demo Platform
           </h1>
