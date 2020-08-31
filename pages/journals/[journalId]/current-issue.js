@@ -3,6 +3,7 @@ import axios from "axios";
 
 import AppTemplate from '../../../components/AppTemplate'
 import ListOfResults from '../../../components/common/ListOfResults'
+import SearchResultsFilters from '../../../components/common/SearchResultsFilters'
 import JournalHeader from '../../../components/headers/JournalHeader'
 import styles from '../../../styles/Journal.module.css'
 
@@ -22,10 +23,12 @@ export default function JournalItemCurrentIssuePageRender({data}) {
 
       <main className={styles.main}>
         <div className={`maxWidthLimitedContainer ${styles.pageFlexContainer}`}>
-          <div className={styles.pageAside}>Filters</div>
           <div className={styles.pageBody}>
             <strong>Current issue contains {data.length} articles.</strong>
             <ListOfResults data={data}></ListOfResults>
+          </div>
+          <div className={styles.pageAside}>
+            <SearchResultsFilters></SearchResultsFilters>
           </div>
         </div>
       </main>

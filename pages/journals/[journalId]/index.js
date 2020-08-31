@@ -1,6 +1,9 @@
 import axios from 'axios'
 import AppTemplate from '../../../components/AppTemplate'
 import JournalHeader from '../../../components/headers/JournalHeader'
+import FeaturedItems from '../../../components/common/FeaturedItems'
+import GridLayoutTwoColumns from '../../../components/common/GridLayoutTwoColumns'
+import Feed from '../../../components/common/Feed'
 import styles from '../../../styles/Journal.module.css'
 
 export default function JournalItemPageRender({ journalData }) {
@@ -18,31 +21,49 @@ export default function JournalItemPageRender({ journalData }) {
 
             <br /><br />
 
-            <h2>Most read</h2>
-            <p>...</p>
+            <GridLayoutTwoColumns>
+              <div>
+                <h2>Most read</h2>
+                <FeaturedItems></FeaturedItems>
+              </div>
 
-            <h2>Most cited</h2>
-            <p>...</p>
+              <div>
+                <h2>Most cited</h2>
+                <FeaturedItems></FeaturedItems>
+              </div>
+            </GridLayoutTwoColumns>
 
             <br /><br />
 
-            <h2>Recent articles</h2>
-            <p>...</p>
+            <div>
+              <h2>Recent articles</h2>
+              <GridLayoutTwoColumns>
+                <div><FeaturedItems></FeaturedItems></div>
+                <div><FeaturedItems></FeaturedItems></div>
+
+              </GridLayoutTwoColumns>
+            </div>
 
             <br /><br />
 
-            <h2>Subject Blog</h2>
-            <p>...</p>
+            <GridLayoutTwoColumns>
+              <div>
+                <h2>Subject Blog</h2>
+                <Feed></Feed>
+              </div>
 
-            <h2>Journal tweets</h2>
-            <p>...</p>
+              <div>
+                <h2>Journal tweets</h2>
+                <Feed></Feed>
+              </div>
+            </GridLayoutTwoColumns>
 
             <pre className="hide">{JSON.stringify(journalData, null, 2)}</pre>
 
           </div>
           <div className={styles.pageAside}>
             <div className="textCenter">
-              <img src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} />
+              <img src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />
               <a href="#">Current issue (Sep 20):<br /><i>Dummy content in publishing</i></a>
             </div>
 

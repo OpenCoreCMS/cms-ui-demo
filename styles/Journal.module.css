@@ -1,6 +1,6 @@
 .pageFlexContainer { flex: 1; display: flex; flex-direction: row; justify-content: space-between;}
 .pageAside { flex: 0; min-width: 300px; max-width: 300px}
-.pageBody { flex: 1; max-width: 900px}
+.pageBody { flex: 1; max-width: 870px; /*border: 1px dashed red;*/}
 
 @media only screen and (max-width: 900px) {
   .pageAside {display: none}
@@ -8,6 +8,6 @@
 
 .pageAside {
   border: 1px solid #eee; border-radius: 3px;
-  padding: 1rem; margin: -1rem 1rem 0 0;
+  padding: 1rem; /*margin: -1rem 1rem 0 0;*/
   background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
 }
