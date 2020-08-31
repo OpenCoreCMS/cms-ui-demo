@@ -6,7 +6,7 @@ import GridLayoutTwoColumnsEven from '../../../components/GridLayout/GridLayoutT
 import GridLayoutTwoColumnsOdd from '../../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
 import JournalQuickInfoPane from '../../../components/Journals/JournalQuickInfoPane'
-import Feed from '../../../components/Blocks/Feed'
+import DataFeed from '../../../components/Blocks/DataFeed'
 
 export default function JournalItemPageRender({ journalData }) {
   return (
@@ -52,12 +52,12 @@ export default function JournalItemPageRender({ journalData }) {
             <GridLayoutTwoColumnsEven>
               <div>
                 <h3>Subject Blog</h3>
-                <Feed></Feed>
+                <DataFeed></DataFeed>
               </div>
 
               <div>
                 <h3>Journal tweets</h3>
-                <Feed></Feed>
+                <DataFeed></DataFeed>
               </div>
             </GridLayoutTwoColumnsEven>
           </div>

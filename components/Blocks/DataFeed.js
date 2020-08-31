@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import styles from './Feed.module.css'
+import styles from './DataFeed.module.css'
 
 export default function FeaturedItemsComponent({ items = [{id: 'X', title: 'Lorem ipsum', description: 'Lorem ipsum', url: 'https://example.com/blog/1' }] }) {
   const markup = items.map((item) => (
