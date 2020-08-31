@@ -8,13 +8,14 @@ html, body {
 body {background-color: #eee}
 
 /* typography */
-a { color: #07f; text-decoration: none; }
-a:hover, a:focus, a:active { color: #036; text-decoration: underline; }
-.wip { color: rgba(0,0,0,0.6); background: rgba(255,235,0,0.3); text-decoration: none; cursor: default; border: 1px dashed rgba(255,52,52,0.4)}
+a { color: #2390d6; text-decoration: none; }
+a:hover, a:focus, a:active { color: #0a5c9a; text-decoration: underline; }
+.wip { color: rgba(0,0,0,0.15); text-decoration: none; cursor: default; border: 1px dotted rgba(165,10,10,0.2)}
 
 h1 { margin: 0 0 2rem; line-height: 1.15; font-size: 3rem; }
 h2 { margin: 0 0 2rem; line-height: 1.15; font-size: 2rem; }
 h3 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.3rem; }
+h4 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.1rem; }
 
 hr { height:1px; display: block; background: #eee; border: 0 }
 

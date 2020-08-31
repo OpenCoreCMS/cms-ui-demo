@@ -21,10 +21,10 @@ export default function JournalItemPageRender({ journalData }) {
             <p>{journalData.description}</p>
             <p><a href="#">More information about this journal</a></p>
 
-            <br /><br />
+            <br /><hr /><br />
 
             <div>
-              <h2>Recent articles</h2>
+              <h3>Recent articles</h3>
               <GridLayoutTwoColumnsEven>
                 <div><FeaturedItems></FeaturedItems></div>
                 <div><FeaturedItems></FeaturedItems></div>
@@ -33,31 +33,30 @@ export default function JournalItemPageRender({ journalData }) {
             </div>
 
 
-            <br /><br />
-
+            <br /><hr /><br />
 
             <GridLayoutTwoColumnsEven>
               <div>
-                <h2>Most read</h2>
+                <h3>Most read</h3>
                 <FeaturedItems></FeaturedItems>
               </div>
 
               <div>
-                <h2>Most cited</h2>
+                <h3>Most cited</h3>
                 <FeaturedItems></FeaturedItems>
               </div>
             </GridLayoutTwoColumnsEven>
 
-            <br /><br />
+            <br /><hr /><br />
 
             <GridLayoutTwoColumnsEven>
               <div>
-                <h2>Subject Blog</h2>
+                <h3>Subject Blog</h3>
                 <Feed></Feed>
               </div>
 
               <div>
-                <h2>Journal tweets</h2>
+                <h3>Journal tweets</h3>
                 <Feed></Feed>
               </div>
             </GridLayoutTwoColumnsEven>
