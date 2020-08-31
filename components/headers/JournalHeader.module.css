@@ -1,3 +1,25 @@
 .title {
-  color: maroon;
+  /* color: maroon; */
 }
+
+.tabs {
+  background: #f8f8f8;
+  margin: 40px 0 -20px;
+
+}
+
+  .tabs .tab {
+    height: 20px;
+    line-height: 20px;
+    padding: 15px 25px;
+    border-radius: 3px 3px 0 0;
+    border: 1px solid transparent;
+    border-right-color: #eee;
+  }
+
+  .tabs .tab.selected {
+    background: white;
+    /* border: 1px solid #eee; */
+    border-color: #eee;
+    border-bottom-color: transparent;
+  }

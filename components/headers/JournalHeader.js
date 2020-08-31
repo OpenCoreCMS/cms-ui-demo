@@ -11,21 +11,18 @@ export default function JournalHeader({
         {journalId}
       </h1>
       <br />
-      <nav>
+      <nav className={styles.tabs}>
         <Link href="/journals/[jouralId]" as={`/journals/${journalId}`}>
-          <a>Journal home</a>
+          <a className={`${styles.tab} ${styles.selected}`}>Journal home</a>
         </Link>
-        {' | '}
         <Link href="/journals/[jouralId]/current-issue" as={`/journals/${journalId}/current-issue`}>
-          <a>Current issue</a>
+          <a className={styles.tab}>Current issue</a>
         </Link>
-        {' | '}
         <Link href="/journals/[jouralId]/all-issues" as={`/journals/${journalId}/all-issues`}>
-          <a>All issues</a>
+          <a className={styles.tab}>All issues</a>
         </Link>
-        {' | '}
         <Link href="/journals/[jouralId]/most-read" as={`/journals/${journalId}/most-read`}>
-          <a>Most read</a>
+          <a className={styles.tab}>Most read</a>
         </Link>
       </nav>
     </div>
