@@ -1,7 +1,6 @@
 
 .tabs {
   margin: 30px 0 -32px;
-
 }
 
   .tabs .tab {
@@ -11,6 +10,7 @@
     border-radius: 3px 3px 0 0;
     border: 1px solid transparent;
     border-right-color: #eee;
+    background: rgba(255,255,255,0.7);
   }
 
   .tabs .tab.selected {
@@ -19,3 +19,12 @@
     border-color: #eee;
     border-bottom-color: transparent;
   }
+
+
+.mastheadContainer {
+  /* background: #18c; */
+}
+.mastheadContainer h1 {
+  /* color: white; */
+  /* text-shadow: 0 1px 3px rgba(0,0,0,0.4); */
+}
