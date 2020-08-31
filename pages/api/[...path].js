@@ -1,4 +1,6 @@
 // We proxy all requests to the dedicated BFF (Backend For Frontend)
+
+// eslint-disable-next-line no-undef
 const axios = require('axios');
 const bffBaseUrl = 'http://localhost:4000/api';
 
