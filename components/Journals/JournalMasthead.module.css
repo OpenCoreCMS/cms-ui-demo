@@ -15,7 +15,7 @@
 
   .tabs .tab.selected {
     background: white;
-    /* border: 1px solid #eee; */
+    color: #777;
     border-color: #eee;
     border-bottom-color: transparent;
   }

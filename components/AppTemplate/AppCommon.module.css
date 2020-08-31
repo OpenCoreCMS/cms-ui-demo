@@ -4,9 +4,12 @@
   background: white;
 }
 
+
 .navLeft {flex: 1}
 .navRight {min-width: 160px}
 
+.navLeft, .navRight { height: 40px; }
+.navItem {display: inline-block; height: 40px; line-height: 40px}
 
 /* footer */
 .footer {
@@ -23,3 +26,6 @@
   .footer {display: none;}
   .header {display: none;}
 }
+
+.pipe { display: inline-block; width: 1px; height: 20px; background: #ccc; margin: 0 20px; position: relative; top: 5px; }
+.brandLogo {position: relative; max-height: 28px; margin: 0 -8px -8px 0}

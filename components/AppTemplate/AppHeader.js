@@ -1,35 +1,44 @@
 import Link from 'next/link'
 
-// import GridLayoutTwoColumnsEven from './GridLayout/GridLayoutTwoColumnsEven'
-import styles from './AppTemplate.module.css'
+import AppCommonStyles from './AppCommon.module.css'
 
 export default function AppFooterComponent() {
-  return <header className={styles.header}>
+  return <header className={AppCommonStyles.header}>
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
-        <nav className={styles.navLeft}>
+        <nav className={AppCommonStyles.navLeft}>
           <Link href="/">
-            <a>Home</a>
+            <a className={AppCommonStyles.navItem}>
+              <img className={AppCommonStyles.brandLogo} src="/public/oppdp-logo-blue.png" />
+            </a>
           </Link>
-          {' | '}
+
+          <span className={AppCommonStyles.pipe}></span>
+
           <Link href="/journals">
-            <a>Journals</a>
+            <a className={AppCommonStyles.navItem}>Journals</a>
           </Link>
-          {' | '}
+
+          <span className={AppCommonStyles.pipe}></span>
+
           <Link href="/books">
-            <a className="wip">Books</a>
+            <a className={`wip ${AppCommonStyles.navItem}`}>Books</a>
           </Link>
-          {' | '}
+
+          <span className={AppCommonStyles.pipe}></span>
+
           <Link href="/subjects">
-          <a className="wip">Subjects</a>
+            <a className={`wip ${AppCommonStyles.navItem}`}>Subjects</a>
           </Link>
         </nav>
 
-        <span className={styles.navRight}>
+        <nav className={AppCommonStyles.navRight}>
+          <span className={AppCommonStyles.pipe}></span>
+
           <Link href="/signin">
-            <a className="wip">Sign in</a>
+            <a className={`wip ${AppCommonStyles.navItem}`}>Sign in</a>
           </Link>
-        </span>
+        </nav>
       </div>
     </div>
   </header>

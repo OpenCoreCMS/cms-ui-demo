@@ -1,9 +1,7 @@
-import Link from 'next/link'
 import Head from 'next/head'
 
 import AppFooter from './AppFooter'
 import AppHeader from './AppHeader'
-import styles from './AppTemplate.module.css'
 
 export default function AppTemplateComponent({
   children,

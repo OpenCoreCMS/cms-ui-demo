@@ -1,49 +1,48 @@
 import Link from 'next/link'
 
-import GridLayoutTwoColumnsOdd from '../GridLayout/GridLayoutTwoColumnsOdd'
-import GridLayoutTwoColumnsOddStyles from '../GridLayout/GridLayoutTwoColumnsOdd.module.css'
-import styles from './AppTemplate.module.css'
+import AppCommonStyles from './AppCommon.module.css'
 
 export default function AppFooterComponent() {
-  return <footer className={styles.footer}>
+  return <footer className={AppCommonStyles.footer}>
     <div className="maxWidthLimitedContainer">
-      <GridLayoutTwoColumnsOdd>
-        <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
-          <Link href="/about">
-            <a>About</a>
+      <div className="flexContainer">
+        <nav className={AppCommonStyles.navLeft}>
+          <Link href="/help/about">
+            <a className={AppCommonStyles.navItem}>About</a>
           </Link>
-          &nbsp; {' | '} &nbsp;
-          <Link href="/contact-us">
-            <a>
+          <span className={AppCommonStyles.pipe}></span>
+          <Link href="/help/contact-us">
+            <a className={AppCommonStyles.navItem}>
               Contact us
             </a>
           </Link>
-          &nbsp; {' | '} &nbsp;
+          <span className={AppCommonStyles.pipe}></span>
           <Link href="/legal/accessibility">
-            <a>
+            <a className={AppCommonStyles.navItem}>
               Accessibility
             </a>
           </Link>
-          &nbsp; {' | '} &nbsp;
+          <span className={AppCommonStyles.pipe}></span>
           <Link href="/legal/terms-of-use">
-            <a className="wip">
+            <a className={AppCommonStyles.navItem}>
               Terms of use
             </a>
           </Link>
-          &nbsp; {' | '} &nbsp;
+          <span className={AppCommonStyles.pipe}></span>
           <Link href="/legal/privacy-policy">
-            <a className="wip">
+            <a className={AppCommonStyles.navItem}>
               Privacy policy
             </a>
           </Link>
-        </div>
+        </nav>
 
-        <div className={GridLayoutTwoColumnsOddStyles.gridAside}>
-          <a href="https://OpenPublishingPlatform.com" target="_blank" rel="noopener" title="Open Publishing Platform">
+        <nav className={AppCommonStyles.navRight}>
+          <span className={AppCommonStyles.pipe}></span>
+          <a className={AppCommonStyles.navItem} href="https://OpenPublishingPlatform.com" target="_blank" rel="noopener" title="Open Publishing Platform">
             Powered by OPP
           </a>
-        </div>
-      </GridLayoutTwoColumnsOdd>
+        </nav>
+      </div>
 
     </div>
   </footer>
