@@ -6,4 +6,8 @@
   .pageAside {display: none}
 }
 
-.pageAside {border: 1px solid #eee; border-radius: 3px; padding: 1rem; margin: -1rem 1rem 0 0;}
+.pageAside {
+  border: 1px solid #eee; border-radius: 3px;
+  padding: 1rem; margin: -1rem 1rem 0 0;
+  background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
+}

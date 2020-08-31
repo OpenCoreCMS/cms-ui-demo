@@ -8,3 +8,5 @@
   margin: 10px 0;
   padding: 10px 0;
 }
+
+.result a:visited { color: #606; }
