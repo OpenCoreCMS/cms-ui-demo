@@ -10,9 +10,15 @@ export default function JournalItemCurrentIssuePageRender({data}) {
   const router = useRouter();
   const { journalId } = router.query;
 
+  const journalData = {
+    id: journalId,
+    name: journalId,
+    description: ''
+  }
+
   return (
     <AppTemplate title="Current issue - Journal Name - Publisher Name">
-      <JournalHeader journalId={journalId}></JournalHeader>
+      <JournalHeader journalData={journalData}></JournalHeader>
 
       <main className={styles.main}>
         <div className={`maxWidthLimitedContainer ${styles.pageFlexContainer}`}>

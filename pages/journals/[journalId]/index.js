@@ -5,11 +5,8 @@ import styles from '../../../styles/Journal.module.css'
 
 export default function JournalItemPageRender({ journalData }) {
   return (
-    <AppTemplate>
-      <JournalHeader
-        journalName={journalData.name}
-        journalId={journalData.id}>
-      </JournalHeader>
+    <AppTemplate title={`${journalData.name} - Journal home - OPP Demo`}>
+      <JournalHeader journalData={journalData}></JournalHeader>
 
       <main className={styles.main}>
         <div className="maxWidthLimitedContainer">
