@@ -19,7 +19,7 @@ export default function JournalItemCurrentIssuePageRender({data}) {
   }
 
   return (
-    <AppTemplate title="Current issue - Journal Name - Publisher Name">
+    <AppTemplate title={`${journalData.name} - Current issue - OPP Demo`}>
       <JournalMasthead journalData={journalData}></JournalMasthead>
 
       <main>
@@ -67,6 +67,7 @@ export async function getServerSideProps({ params }) {
   // console.log(data);
   return {
     props: {
+      journalData: {},
       data,
     },
   };

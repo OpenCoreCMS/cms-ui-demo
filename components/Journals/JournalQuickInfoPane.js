@@ -2,7 +2,9 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
   return <div>
     <div className="textCenter">
       <img src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />
-      <a href="#">Current issue (Sep 20):<br /><i>Dummy content in publishing</i></a>
+      <a href={`/journals/${journalData.id}/current-issue`}>
+        Current issue (Sep 20):<br /><i>Dummy content in publishing</i>
+      </a>
     </div>
 
     <br /><br />

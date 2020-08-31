@@ -18,7 +18,7 @@ export default function JournalItemPageRender({ journalData }) {
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
 
             <h2>About this journal</h2>
-            <p>{journalData.description}</p>
+            <p className="pinned">{journalData.description}</p>
             <p><a className="wip" href="#">More information about this journal</a></p>
 
             <br /><hr /><br />
