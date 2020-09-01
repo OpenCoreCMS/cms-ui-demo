@@ -15,7 +15,30 @@ export default function JournalArticlePageRender({ journalData, articleData }) {
         <GridLayoutThreeColumnsOdd>
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
             <div className="panel">
-              Journal information
+              <strong>Article info</strong>
+              <br />
+              <span>Volume: {articleData.volume}</span><br />
+              <span>Date: {articleData.published}</span><br />
+              <span>Keywords: {articleData.keywords.join(', ')}</span><br />
+              <span>Version: {articleData.version}</span><br />
+              <span>ID: {articleData.id}</span><br />
+
+              <span>
+                Formats:
+                {articleData.pdf ? 'PDF' : ''},
+                {articleData.xml ? 'XML' : ''}
+              </span><br />
+
+
+              <span className="subjects">
+                <strong>Subjects: </strong>
+                {articleData.subjects ? articleData.subjects.map(function(subject, index){
+                  return <span key={`author-${index}`}>{subject.name} , </span>;
+                }) : ''}
+              </span><br />
+
+              In collections...
+
             </div>
             <br />
             <div className="panel">
@@ -24,19 +47,55 @@ export default function JournalArticlePageRender({ journalData, articleData }) {
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridBody}>
+            {articleData.type ?
+              <span className="contentTypePill">{articleData.type}</span> : ''}
+
+            &nbsp; &nbsp;
+
+            {articleData.titlePrefix ?
+              <span className="contentTypePill">${articleData.titlePrefix}</span> : ''}
+
+            &nbsp; &nbsp;
+
             <span><LinkDOI doi={articleData.doi}></LinkDOI></span><br />
+
             <h1>{articleData.title}</h1>
-            <span className="authors">{articleData.authorLine}</span><br />
-            <span className="contentTypePill">{articleData.titlePrefix}</span><br />
+
+            <span className="authors">
+              {articleData.authors.map(function(person, index){
+                return <span key={`author-${index}`}>{person.name.preferred} , </span>;
+              })}
+            </span>
+            <br />
+
+            <span className="reviewers">
+              <strong>Reviewed by: </strong>
+              {articleData.reviewers ? articleData.reviewers.map(function(person, index){
+                return <span key={`reviewer-${index}`}>{person.name.preferred} , </span>;
+              }) : ''}
+            </span><br />
+
+
+
+
+            <br />
+            <h2>Impact statement</h2>
+            <p className="pinned">{articleData.impactStatement}</p>
             <br />
             <h2>Abstract</h2>
-            <p className="pinned">{articleData.impactStatement}</p>
+            <p>{articleData.abstract.content[0].text}</p>
             <br />
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
             <div className="panel">
-              Article info
+              Journal info
+            </div>
+            <div className="panel">
+              Metrics
+            </div>
+            <div className="panel">
+              Related publications
             </div>
           </div>
         </GridLayoutThreeColumnsOdd>
