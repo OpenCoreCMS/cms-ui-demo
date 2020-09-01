@@ -61,6 +61,9 @@ main {
   color: rgba(0,119,132,0.25);
 }
 
+.debugViewer { border: 2px dotted #5ecc85; padding: 15px; max-height: 800px; max-width: 94%; margin: 0 3%; overflow: scroll; box-shadow: inset 0 3px 6px 3px #000; border-radius: 8px; background: #222; font-size: 14px; line-height: 18px; color: #152; transition: 0.5s ease-in color;}
+.debugViewer:active, .debugViewer:focus, .debugViewer:focus-within, .debugViewer:hover { color: #4d6; }
+
 .hide {display: none}
 
 

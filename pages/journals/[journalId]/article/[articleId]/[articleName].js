@@ -40,6 +40,10 @@ export default function JournalArticlePageRender({ journalData, articleData }) {
             </div>
           </div>
         </GridLayoutThreeColumnsOdd>
+
+        <div className="debugViewer hide">
+          <pre>{JSON.stringify(articleData, null, 2)}</pre>
+        </div>
       </main>
 
     </AppTemplate>
