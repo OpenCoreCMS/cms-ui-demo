@@ -4,6 +4,7 @@ import AppTemplate from '../../../../../components/AppTemplate/AppTemplate'
 import GridLayoutThreeColumnsOdd from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd'
 import GridLayoutThreeColumnsOddStyles from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd.module.css'
 // import JournalMasthead from '../../../../../components/Journals/JournalMasthead'
+import LinkDOI from '../../../../../components/Link/LinkDOI'
 
 // http://localhost:3000/journals/bbs:elife-science/article/58807/test
 export default function JournalArticlePageRender({ journalData, articleData }) {
@@ -23,10 +24,10 @@ export default function JournalArticlePageRender({ journalData, articleData }) {
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridBody}>
+            <span><LinkDOI doi={articleData.doi}></LinkDOI></span><br />
             <h1>{articleData.title}</h1>
             <span className="authors">{articleData.authorLine}</span><br />
             <span className="contentTypePill">{articleData.titlePrefix}</span><br />
-            <span>{articleData.doi}</span><br />
             <br />
             <h2>Abstract</h2>
             <p className="pinned">{articleData.impactStatement}</p>

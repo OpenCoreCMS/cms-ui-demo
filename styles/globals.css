@@ -12,9 +12,13 @@ a { color: #2390d6; text-decoration: none; }
 a:hover, a:focus, a:active { color: #0a5c9a; text-decoration: underline; }
 
 .linkExternal:hover, .linkExternal:focus, .linkExternal:active {
-  color: #b13445 !important; text-decoration-line: underline; text-decoration-style: dashed;
+  color: #b13445 !important;
+  text-decoration-line: underline; text-decoration-style: dashed;
 }
 .linkExternal::after { content: " ➲"; }
+
+.linkDOI:hover, .linkDOI:focus, .linkDOI:active { color: #fcb426 }
+.linkDOI::after { content: " ➲"; }
 
 /* standard elements */
 hr { height:1px; display: block; background: #eee; border: 0 }
