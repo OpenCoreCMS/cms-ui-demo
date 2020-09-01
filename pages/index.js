@@ -4,10 +4,11 @@ import styles from '../styles/Home.module.css'
 
 export default function HomePageRender() {
   return (
-    <AppTemplate title="Home - OPP Demo">
+    <AppTemplate title="Home - OPP Demo" pageType="homepage" theme="default">
       <main className={styles.main}>
         <div className="maxWidthLimitedContainer textCenter">
-          <img src="/public/oppdp-icon-white-500.png" width="400" />
+          <img src="/public/oppdp-icon-white-500.png" height="180" />
+          <br />
           <h1 className={styles.title}>
             OPP Demo Platform
           </h1>

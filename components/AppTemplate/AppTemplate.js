@@ -8,9 +8,11 @@ import AppBreadcrumbs from './AppBreadcrumbs'
 export default function AppTemplateComponent({
   children,
   title = 'OPP Demo',
+  theme = 'default',
+  pageType = ''
 }) {
   return (
-    <div className="container">
+    <div className={`appRootContainer appTheme-${theme} appPageType-${pageType}`}>
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
@@ -21,7 +23,7 @@ export default function AppTemplateComponent({
       <AppHeaderForPrint></AppHeaderForPrint>
       <AppHeaderForScreen></AppHeaderForScreen>
 
-      <AppBreadcrumbs></AppBreadcrumbs>
+      {pageType !== 'homepage' ? <AppBreadcrumbs></AppBreadcrumbs> : ''}
 
       {children}
 

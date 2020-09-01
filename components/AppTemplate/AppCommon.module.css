@@ -21,16 +21,20 @@
 .footer a { color: #4571a5 }
 .footer a:hover, .footer a:focus, .footer a:active  { color: #1f4b80;}
 
-.printHeader {display: none}
+.printHeader {display: none;}
 
 @media print {
   .footer {display: none;}
   .header {display: none;}
-  .printHeader {display: block}
+  .printHeader {display: block;}
 }
 
-.brandLogo {position: relative; max-height: 28px; margin: 0 -8px -8px 0}
+.brandLogo {position: relative; max-height: 28px; margin: 0 -8px -8px 0; }
 .pipe { display: inline-block; width: 1px; height: 20px; background: #ccc; margin: 0 20px; position: relative; top: 5px; }
 
-.breadcrumbSeparator {padding: 0 10px;}
-.breadcrumbSeparator::after { content: " › "; color: #bbb}
+.breadcrumbItemSeparator {padding: 0 10px; }
+.breadcrumbItemSeparator::after { content: " › "; color: #bbb; }
+
+.breadcrumbItemContainer { font-size: 0.85rem; }
+.breadcrumbItemContainer a { color: #aaa; transition: 0.15s ease-in color; }
+.breadcrumbItemContainer a:hover, .breadcrumbItemContainer a:focus, .breadcrumbItemContainer a:active  { color: #1f4b80;}

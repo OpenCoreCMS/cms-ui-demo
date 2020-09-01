@@ -22,12 +22,15 @@ function parseBreadcrumbs(pathname) {
     breadcrumbSegments.reduce(mergePathSegmentsReducer);
   }
 
+  newBreadcrumbSegments[0].first = true;
+
   return newBreadcrumbSegments.map((seg) => {
-    return seg.name ? <span key={seg.path}>
-      <span className={AppCommonStyles.breadcrumbSeparator}></span>
+    return seg.name ? <span key={seg.path} className={AppCommonStyles.breadcrumbItemContainer}>
+      {seg.first ? '' : <span className={AppCommonStyles.breadcrumbItemSeparator}></span>}
       <Link href={`${seg.path}`}>
         <a className={AppCommonStyles.navItem}>{seg.name ? seg.name : seg.segment}</a>
       </Link>
+
     </span> : null;
   });
 }
