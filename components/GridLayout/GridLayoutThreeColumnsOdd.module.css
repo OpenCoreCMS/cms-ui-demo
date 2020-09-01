@@ -1,0 +1,13 @@
+.gridRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gridAside { flex: 0; min-width: 300px; max-width: 300px; }
+.gridBody { flex: 1; max-width: 870px; padding: 0 1rem; }
+
+@media only screen and (max-width: 900px) {
+  .gridAside { display: none; }
+}
