@@ -1,7 +1,8 @@
 .main {
   /* background-image: linear-gradient(340deg, #cde, #f1f1ff); */
-  background-image: linear-gradient(340deg, #226eb9, #47ccff);
   /* background-image: linear-gradient(310deg, #345, #81819f); */
+  /* background-image: linear-gradient(340deg, #226eb9, #47ccff); */
+  background-image: linear-gradient(340deg, #476576, #47ccff);
   justify-content: center;
   color: white;
 }

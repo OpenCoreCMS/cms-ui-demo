@@ -11,7 +11,7 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
 
     <hr />
 
-    <p>
+    <div>
       <h3>Bibliographic info</h3>
       <strong>Journal name: </strong> {journalData.name}
       <br />
@@ -29,36 +29,42 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       <strong>Publishing dates:</strong> 2004-present
       <br />
       <strong>Publisher:</strong> <a className="linkExternal" target="_blank" rel="noopener" href={journalData.publisher.url}>{journalData.publisher.name}</a>
-    </p>
+    </div>
 
     <hr />
-    <h3>Information</h3>
-    <p>
-      <strong>Chief Editor: </strong> Professor John Doe, Institute of Science
-    </p>
-    <p>
-      <a className="wip" href="#">Editorial board</a>
-    </p>
-    <p>
-      <a className="wip" href="#">Author guidelines</a>
-    </p>
+
+    <div>
+      <h3>Information</h3>
+      <p>
+        <strong>Chief Editor: </strong> Professor John Doe, Institute of Science
+      </p>
+      <p>
+        <a className="wip" href="#">Editorial board</a>
+      </p>
+      <p>
+        <a className="wip" href="#">Author guidelines</a>
+      </p>
+
+      <hr />
+      <h3>Journal title history</h3>
+      <p>
+        This journal has been published under other titles in the past.
+        <br />
+        <br />
+        <a className="wip" href="#">View this journal's title history</a>
+      </p>
+    </div>
 
     <hr />
-    <h3>Journal title history</h3>
-    <p>
-      This journal has been published under other titles in the past.
-      <br />
-      <br />
-      <a className="wip" href="#">View this journal's title history</a>
-    </p>
 
-    <hr />
-    <h3>Metrics</h3>
-    <p>
-      <strong>Impact Factor:</strong> 3.11
-    </p>
-    <p>
-      <strong>Monthly article views:</strong> 93,234
-    </p>
+    <div>
+      <h3>Metrics</h3>
+      <p>
+        <strong>Impact Factor:</strong> 3.11
+      </p>
+      <p>
+        <strong>Monthly article views:</strong> 93,234
+      </p>
+    </div>
   </div>;
 }

@@ -6,9 +6,9 @@ export default function ListOfResultsComponent({ data = [] }) {
   const x = data.map((item) => (
     <li className={styles.result} key={item.id}>
       <h3>
-      <Link href="/journals/journalId/article/[itemId]" as={`/journals/journalId/article/${item.id}`}>
-        <a>{item.title}</a>
-      </Link>
+        <Link href="/journals/journalId/article/[itemId]/test" as={`/journals/journalId/article/${item.id}/test`}>
+          <a>{item.title}</a>
+        </Link>
       </h3>
       <br />
       <span>Authors: {item.authorLine}</span><br />
