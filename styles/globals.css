@@ -90,5 +90,7 @@ main {
   font-size: 14px;
   text-transform: uppercase;
   font-family: sans-serif;
-  min-width: 120px;
+  min-width: 80px;
+  text-align: center;
+  margin: 3px;
 }

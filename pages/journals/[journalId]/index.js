@@ -23,6 +23,17 @@ export default function JournalItemPageRender({ journalData }) {
 
             <br /><hr /><br />
 
+            <h3>Published content type</h3>
+            <span className="contentTypePill">Editorials</span>
+            <span className="contentTypePill">Insights</span>
+            <span className="contentTypePill">Feature Articles</span>
+            <span className="contentTypePill">Podcasts</span>
+            <span className="contentTypePill">Collections</span>
+            <span className="contentTypePill">Community</span>
+            <span className="contentTypePill">Digests</span>
+
+            <br /><hr /><br />
+
             <div>
               <h3>Recent articles</h3>
               <GridLayoutTwoColumnsEven>
