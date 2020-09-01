@@ -9,7 +9,7 @@ export default function FeaturedItemsComponent({ items = [{id: '57162', title: '
         <img src={`https://dummyimage.com/120x160/aaa/fff.png&text=${item.id}`} />
       </span>
       <span className={styles.description}>
-        <Link href="/journals/[journalId]/article/[itemId]" as={`/journals/${item.journalId}/article/${item.id}`}>
+        <Link href="/journals/[journalId]/article/[itemId]/article-name" as={`/journals/${item.journalId}/article/${item.id}/article-name`}>
           <a>{item.title}</a>
         </Link>
         <span>{item.authorLine}</span><br />
