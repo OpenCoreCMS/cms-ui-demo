@@ -5,8 +5,8 @@
   justify-content: space-between;
 }
 
-.gridAside { flex: 0; min-width: 300px; max-width: 300px}
-.gridBody { flex: 1; max-width: 870px; /*border: 1px dashed red;*/}
+.gridAside { flex: 0; min-width: 300px; max-width: 300px; overflow-x: hidden;}
+.gridBody { flex: 1; max-width: 1040px; overflow-x: hidden;}
 
 @media only screen and (max-width: 900px) {
   .gridAside {display: none}

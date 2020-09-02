@@ -5,4 +5,4 @@
   justify-content: space-between;
 }
 
-.gridRow > * {flex: 1; min-width: 50%; max-width: 50%; padding: 1rem}
+.gridRow > * {flex: 1; min-width: 50%; max-width: 50%; padding: 1rem; overflow-x: hidden;}

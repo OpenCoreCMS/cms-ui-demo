@@ -3,7 +3,8 @@
 
 .smallSearchContainer {
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-  min-width: 180px; max-width: 280px;
+  /* min-width: 180px; max-width: 280px; */
+  width: 300px;
 }
 
   .smallSearchInput, .smallSearchSubmit {
@@ -12,14 +13,15 @@
 
   .smallSearchInput {
     flex: 1;
-    line-height: 20px; height: 40px; padding: 20px 10px;
+    height: 38px;
+    padding: 6px 10px;
     background: rgba(255,255,255,0.9);
     border-radius: 5px 0 0 5px;
   }
 
   .smallSearchSubmit {
     width: 60px;
-    height: 42px; padding: 10px;
+    height: 38px; padding: 10px;
     background: #2390d6;
     color: white;
     border-radius: 0 5px 5px 0;
