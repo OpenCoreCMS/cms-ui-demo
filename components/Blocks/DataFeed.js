@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import ExternalLink from '../Link/ExternalLink'
 
 import styles from './DataFeed.module.css'
 
@@ -6,9 +6,9 @@ export default function FeaturedItemsComponent({ items = [{id: 'X', title: 'Lore
   const markup = items.map((item) => (
     <span className={styles.item} key={item.id}>
       <img className="avatarSquare" src={`https://dummyimage.com/80x80/aaa/fff.png&text=${item.id}`} />
-      <Link href={item.url}>
-        <a target="_blank" rel="noopener">{item.title}</a>
-      </Link>
+      <ExternalLink href={item.url}>
+        <span>{item.title}</span>
+      </ExternalLink>
       <p>{item.description}</p>
       </span>
   ));

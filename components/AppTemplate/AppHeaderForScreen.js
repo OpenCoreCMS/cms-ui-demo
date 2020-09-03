@@ -1,5 +1,4 @@
-import Link from 'next/link'
-
+import AppLink from '../Link/AppLink'
 import AppCommonStyles from './AppCommon.module.css'
 
 export default function AppHeaderComponent() {
@@ -7,47 +6,45 @@ export default function AppHeaderComponent() {
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
         <nav className={AppCommonStyles.navLeft}>
-          <Link href="/">
-            <a className={AppCommonStyles.navItem}>
+          <AppLink href="/" className={AppCommonStyles.navItem}>
               <img className={AppCommonStyles.brandLogo} src="/public/oppdp-full-logo-blue.png" />
-            </a>
-          </Link>
+          </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <Link href="/journals">
-            <a className={AppCommonStyles.navItem}>Journals</a>
-          </Link>
+          <AppLink href="/journals" className={AppCommonStyles.navItem}>
+            <span>Journals</span>
+          </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <Link href="">
-            <a className={`wip ${AppCommonStyles.navItem}`}>Books</a>
-          </Link>
+          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+            <span>Books</span>
+          </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <Link href="">
-            <a className={`wip ${AppCommonStyles.navItem}`}>Subjects</a>
-          </Link>
+          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+            <span>Subjects</span>
+          </AppLink>
         </nav>
 
         <nav className={AppCommonStyles.navRight}>
-          <Link href="">
-            <a className={`wip ${AppCommonStyles.navItem}`}>Language</a>
-          </Link>
+          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+            <span>Language</span>
+          </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <Link href="">
-            <a className={`wip ${AppCommonStyles.navItem}`}>(0) Cart</a>
-          </Link>
+          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+            <span>(0) Cart</span>
+          </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <Link href="">
-            <a className={`wip ${AppCommonStyles.navItem}`}>Sign in</a>
-          </Link>
+          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+            <span>Sign in</span>
+          </AppLink>
         </nav>
       </div>
     </div>

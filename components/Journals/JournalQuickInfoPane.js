@@ -1,10 +1,15 @@
 import Panel from '../CommonElements/Panel'
+import JournalIssueCover from './JournalIssueCover'
 
 export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
   return <div>
     <Panel>
       <div className="textCenter">
-        <img className="coverImageMedium" src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />
+        <JournalIssueCover
+          size="medium"
+          journalIssueId={journalData.id}
+          text={`Current issue of ${journalData.name}`}
+        ></JournalIssueCover>
         <br />
         <a href={`/journals/${journalData.id}/current-issue`}>
           Current issue (Sep 20):<br /><i>Dummy content in publishing</i>

@@ -23,7 +23,7 @@ export default function HomePageRender() {
               <p>See example journals published with Open Publishing Platform.</p>
             </a>
 
-            <a href="/about" className={styles.card}>
+            <a href="/help/about" className={styles.card}>
               <h3>Learn more &rsaquo;</h3>
               <p>Learn more about Open Publishing Platform</p>
             </a>

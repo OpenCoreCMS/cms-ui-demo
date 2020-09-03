@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ExternalLink from '../Link/ExternalLink'
 
 import AppCommonStyles from './AppCommon.module.css'
 
@@ -38,9 +39,9 @@ export default function AppFooterComponent() {
 
         <nav className={AppCommonStyles.navRight}>
           <span className={AppCommonStyles.pipe}></span>
-          <a className={`linkExternal ${AppCommonStyles.navItem}`} href="https://OpenPublishingPlatform.com" target="_blank" rel="noopener" title="Open Publishing Platform">
+          <ExternalLink className={`linkExternal ${AppCommonStyles.navItem}`} href="https://OpenPublishingPlatform.com" title="Open Publishing Platform">
             Powered by OPP
-          </a>
+          </ExternalLink>
         </nav>
       </div>
 

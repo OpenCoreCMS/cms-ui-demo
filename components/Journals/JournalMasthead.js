@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import AppLink from '../Link/AppLink'
 import styles from './JournalMasthead.module.css'
 
 export default function JournalMastheadComponent({ journalData }) {
@@ -9,18 +9,18 @@ export default function JournalMastheadComponent({ journalData }) {
       </h1>
       <br />
       <nav className={styles.tabs}>
-        <Link href="/journals/[jouralId]" as={`/journals/${journalData.id}`}>
-          <a className={`${styles.tab} ${styles.selected}`}>Journal home</a>
-        </Link>
-        <Link href="/journals/[jouralId]/current-issue" as={`/journals/${journalData.id}/current-issue`}>
-          <a className={styles.tab}>Current issue</a>
-        </Link>
-        <Link href="/journals/[jouralId]/all-issues" as={`/journals/${journalData.id}/all-issues`}>
-          <a className={`${styles.tab} wip`}>All issues</a>
-        </Link>
-        <Link href="/journals/[jouralId]/metrics" as={`/journals/${journalData.id}/metrics`}>
-          <a className={`${styles.tab} wip`}>Metrics</a>
-        </Link>
+        <AppLink className={`${styles.tab}`} href={`/journals/${journalData.id}`}>
+          <span>Journal home</span>
+        </AppLink>
+        <AppLink className={`${styles.tab}`} href={`/journals/${journalData.id}/current-issue`}>
+          <span>Current issue</span>
+        </AppLink>
+        <AppLink className={`${styles.tab} wip`} href={`/journals/${journalData.id}/all-issues`}>
+          <span>All issues</span>
+        </AppLink>
+        <AppLink className={`${styles.tab} wip`} href={`/journals/${journalData.id}/metrics`}>
+          <span>Metrics</span>
+        </AppLink>
       </nav>
     </div>
   </div>
