@@ -6,8 +6,9 @@
 }
 
 .gridAside { flex: 0; min-width: 300px; max-width: 300px; overflow-x: hidden; }
-.gridBody { flex: 1; max-width: 960px; padding: 0 1rem; overflow-x: hidden;}
+.gridBody { flex: 1; max-width: 960px; padding: 0 2rem; overflow-x: hidden;}
 
 @media only screen and (max-width: 900px) {
   .gridAside { display: none; }
+  .gridBody { padding: 0 1rem; }
 }

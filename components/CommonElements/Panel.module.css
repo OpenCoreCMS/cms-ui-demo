@@ -1,0 +1,10 @@
+/* visual classes */
+.panel {
+  border: 1px solid #eee; border-radius: 3px; padding: 1rem;
+  background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
+  margin-bottom: 1rem;
+}
+
+.panelTitle {
+  padding-bottom: 1rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem;
+}

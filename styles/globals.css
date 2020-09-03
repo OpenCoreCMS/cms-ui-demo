@@ -50,12 +50,6 @@ main {
   background-color: white;
 }
 
-/* visual classes */
-.panel {
-  border: 1px solid #eee; border-radius: 3px; padding: 1rem;
-  background-image: linear-gradient(#fefefe 20px, #fafafa 300px);
-}
-
 /* debug classes */
 .wip {
   text-decoration: none; cursor: default;
