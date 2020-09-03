@@ -5,6 +5,7 @@ import GridLayoutTwoColumnsOdd from '../../components/GridLayout/GridLayoutTwoCo
 import GridLayoutTwoColumnsOddStyles from '../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
 import ListOfResults from '../../components/Blocks/ListOfResults'
 import ListOfResultsAsideFilters from '../../components/Blocks/ListOfResultsAsideFilters'
+import Pagination from '../../components/CommonElements/Pagination'
 
 export default function SearchPageRender({ searchResults }) {
   const router = useRouter();
@@ -23,6 +24,8 @@ export default function SearchPageRender({ searchResults }) {
         <GridLayoutTwoColumnsOdd>
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
             <strong>Found {searchResults.total} hits for phrase &quot;{phrase}&quot;</strong>
+
+            <Pagination current={searchResults.pages.pageNumber} total={searchResults.pages.totalPages}></Pagination>
             <ListOfResults data={searchResults.results}></ListOfResults>
           </div>
 
