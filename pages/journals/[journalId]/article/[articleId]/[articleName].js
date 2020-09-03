@@ -8,16 +8,14 @@ import LinkDOI from '../../../../../components/Link/LinkDOI'
 import Panel from '../../../../../components/CommonElements/Panel'
 
 // http://localhost:3000/journals/bbs:elife-science/article/58807/test
-export default function JournalArticlePageRender({ journalData = {}, articleData }) {
+export default function JournalArticlePageRender({ journalData = {}, articleData = {} }) {
   return (
     <AppTemplate title={`${articleData.title} - OPP Demo`} pageType="article" theme="default">
 
       <main>
         <GridLayoutThreeColumnsOdd>
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <Panel>
-              <strong>Article navigation</strong><br />
-
+            <Panel title="Article context">
               <div className="textCenter">
                 <img className="coverImageMedium" src="https://dummyimage.com/240x320/aaa/fff.png&text=240x320" alt={`The issue of the "${journalData.name}" journal in which this article has been published`} />
                 <br />
@@ -34,9 +32,7 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
 
             <br />
 
-            <Panel>
-              On this page...
-
+            <Panel title="Page navigation">
               [progress bar / scroll spy]
             </Panel>
           </div>
@@ -83,9 +79,7 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <Panel>
-              <strong>Article metadata</strong><br />
-
+            <Panel title="Article metadata">
               <span>Version: {articleData.version}</span><br />
               <span>ID: {articleData.id}</span><br />
 
@@ -106,12 +100,10 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
 
               In collections...
             </Panel>
-            <Panel>
-              Metrics
-            </Panel>
-            <Panel>
-              Related publications
-            </Panel>
+
+            <Panel title="Metrics"></Panel>
+
+            <Panel title="Related publications"></Panel>
           </div>
         </GridLayoutThreeColumnsOdd>
 
@@ -148,8 +140,8 @@ export async function getServerSideProps(ctx) {
   const requestUrl = ctx.req.url;
   // const reqHeaders = ctx.req.headers;
 
-  const articleUrl = `${apiBase}/api/v1/articles/getArticle/${articleId}`;
-  const journalUrl = `${apiBase}/api/v1/journals/getJournal/${journalId}`;
+  const articleUrl = `${apiBase}/api/v1/journals/articles/${articleId}/getArticle`;
+  const journalUrl = `${apiBase}/api/v1/journals/${journalId}/getJournal`;
   const pageUrl = `${apiBase}/v1/pages/getPage/${encodeURIComponent(requestUrl)}`;
 
   return axios.all([
@@ -158,19 +150,32 @@ export async function getServerSideProps(ctx) {
     axios.get(pageUrl),
   ])
   .then(responseArr => {
-    console.log(responseArr.map((x)=> x.data))
+    // console.log(responseArr.map((x)=> x.data))
 
     return {
       props: {
         articleData: responseArr[0].data,
         journalData: responseArr[1].data,
-        pageData: responseArr[2].data,
+        // pageData: responseArr[2].data,
       },
     }
   })
   .catch(function (error) {
     console.log(error);
-    return { error: 'Could not fetch data' }
+    return {
+      props: {
+        articleData: {
+          authors: [],
+          abstract: {
+            content: [{ text: 'ERROR' }],
+          },
+          keywords: ['ERROR'],
+        },
+        journalData: {},
+        error: 'Could not fetch data',
+      }
+    }
+
   });
 
   // const { data } = await axios.get(articleUrl);
