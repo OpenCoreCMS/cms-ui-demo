@@ -5,6 +5,7 @@ import GridLayoutThreeColumnsOdd from '../../../../../components/GridLayout/Grid
 import GridLayoutThreeColumnsOddStyles from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd.module.css'
 import LinkDOI from '../../../../../components/Link/LinkDOI'
 import Panel from '../../../../../components/CommonElements/Panel'
+import DisplayHTML from '../../../../../components/CommonElements/DisplayHTML'
 
 export default function JournalArticlePageRender({ journalData = {}, articleData = {} }) {
   return (
@@ -48,7 +49,7 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
 
             <span><LinkDOI doi={articleData.doi}></LinkDOI></span><br />
 
-            <h1>{articleData.title}</h1>
+            <h1><DisplayHTML>{articleData.title}</DisplayHTML></h1>
 
             <span className="authors">
               {articleData.authors.map(function(person, index){
@@ -69,10 +70,10 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
 
             <br />
             <h2>Impact statement</h2>
-            <p className="pinned">{articleData.impactStatement}</p>
+            <DisplayHTML className="block pinned">{articleData.impactStatement}</DisplayHTML>
             <br />
             <h2>Abstract</h2>
-            <p>{articleData.abstract.content[0].text}</p>
+            <DisplayHTML className="block">{articleData.abstract.content[0].text}</DisplayHTML>
             <br />
           </div>
 

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import LinkDOI from '../Link/LinkDOI'
+import DisplayHTML from '../CommonElements/DisplayHTML'
 import styles from './ListOfResults.module.css'
 
 export default function ListOfResultsComponent({ data = [] }) {
@@ -11,7 +12,8 @@ export default function ListOfResultsComponent({ data = [] }) {
       <h3>
         <input type="checkbox" /> &nbsp;
         <Link href={item.url}>
-          <a>{item.title}</a>
+
+          <a><DisplayHTML>{item.title}</DisplayHTML></a>
         </Link>
       </h3>
 
@@ -23,7 +25,7 @@ export default function ListOfResultsComponent({ data = [] }) {
         <span>{item.authorLine}</span>
       </p>
 
-      <p className="pinned">{item.impactStatement}</p>
+      <DisplayHTML className="pinned">{item.impactStatement}</DisplayHTML>
 
     </li>
   ))

@@ -109,3 +109,5 @@ main {
   border-color: #eee !important;
   border-bottom-color: transparent !important;
 }
+
+.block {display: block}

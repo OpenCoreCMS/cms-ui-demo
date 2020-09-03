@@ -2,6 +2,7 @@ import axios from 'axios'
 import AppTemplate from '../../../components/AppTemplate/AppTemplate'
 import JournalMasthead from '../../../components/Journals/JournalMasthead'
 import FeaturedItems from '../../../components/Blocks/FeaturedItems'
+import DisplayHTML from '../../../components/CommonElements/DisplayHTML'
 import GridLayoutTwoColumnsEven from '../../../components/GridLayout/GridLayoutTwoColumnsEven'
 import GridLayoutTwoColumnsOdd from '../../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
@@ -18,7 +19,7 @@ export default function JournalItemPageRender({ journalData }) {
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
 
             <h2>About this journal</h2>
-            <p className="pinned">{journalData.description}</p>
+            <p className="pinned"><DisplayHTML>{journalData.description}</DisplayHTML></p>
             <p><a className="wip" href="#">More information about this journal</a></p>
 
             <br /><hr /><br />
