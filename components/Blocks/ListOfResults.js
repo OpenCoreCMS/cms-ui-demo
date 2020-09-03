@@ -25,7 +25,7 @@ export default function ListOfResultsComponent({ data = [] }) {
         <span>{item.authorLine}</span>
       </p>
 
-      <DisplayHTML className="pinned">{item.impactStatement}</DisplayHTML>
+      <DisplayHTML className="block pinned">{item.impactStatement}</DisplayHTML>
 
     </li>
   ))
