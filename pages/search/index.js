@@ -51,15 +51,16 @@ export async function getInitialProps() {
 
 export async function getServerSideProps({ query }) {
   const phrase = query.phrase;
-  const targetUrl = `http://localhost:3000/api/v1/search?phrase=${phrase}`;
+  const pageNumber = query.pageNumber || 1;
+  const pageSize = query.pageSize || 10;
+
+  const targetUrl = `http://localhost:3000/api/v1/search?phrase=${phrase}&pageNumber=${pageNumber}&pageSize=${pageSize}`;
 
   const { data } = await axios.get(targetUrl);
+
   return {
     props: {
-      searchResults: {
-        total: data.total,
-        results: data.results,
-      }
+      searchResults: data
     },
   };
 }

@@ -1,4 +1,17 @@
 // We proxy all requests to the dedicated BFF (Backend For Frontend)
+function constructQueryString(qs) {
+  const allowedProps = ['phrase', 'pageNumber', 'pageSize'];
+  const qsElements = [];
+
+  allowedProps.forEach((prop) => {
+    if (typeof qs[prop] === 'string' && qs[prop] !== 'undefined') {
+      qsElements.push(`${prop}=${qs[prop]}`);
+    }
+  });
+
+  return qsElements.length ? `?${qsElements.join('&')}` : '';
+}
+
 
 // eslint-disable-next-line no-undef
 const axios = require('axios');
@@ -15,7 +28,7 @@ export default function handler(req, res) {
 
   // should this rewrite all keys (other than reserved names)?
   // only whitelisted?
-  const queryString = req.query.phrase ? `?phrase=${req.query.phrase}` : null;
+  const queryString = constructQueryString(req.query);
 
   const fullPath = urlSegments.join('/');
   const fullUrl = `${bffBaseUrl}/${fullPath}${queryString ? queryString : ''}`;
