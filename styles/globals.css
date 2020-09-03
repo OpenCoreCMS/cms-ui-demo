@@ -97,3 +97,15 @@ main {
   text-align: center;
   margin: 3px;
 }
+
+.articleImage { float: right; width: 240px; height: 160px; margin: 0 0 0 20px}
+
+
+
+.active {color: #777}
+.navTab.active {
+  color: #777;
+  background: white !important;
+  border-color: #eee !important;
+  border-bottom-color: transparent !important;
+}

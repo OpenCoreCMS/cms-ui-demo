@@ -6,7 +6,7 @@ import styles from './ListOfResults.module.css'
 export default function ListOfResultsComponent({ data = [] }) {
   const x = data.map((item) => (
     <li className={styles.result} key={item.id}>
-      {item.img ? <img className="coverImageMedium" src={item.img} /> : ''}
+      {item.img ? <img className="articleImage" src={item.img} /> : ''}
 
       <h3>
         <input type="checkbox" /> &nbsp;

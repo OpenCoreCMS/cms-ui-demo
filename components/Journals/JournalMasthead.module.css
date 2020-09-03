@@ -13,12 +13,13 @@
     background: rgba(255,255,255,0.7);
   }
 
-  .tabs .tab.selected {
+  /* the active class gets rewritten and AppLink produces simple "active" class */
+  /* .navTab.active {
     background: white;
     color: #777;
     border-color: #eee;
     border-bottom-color: transparent;
-  }
+  } */
 
 
 .mastheadContainer {
