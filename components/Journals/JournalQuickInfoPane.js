@@ -15,13 +15,13 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
     <Panel title="Bibliographic info" collapsible={true}>
       <strong>Journal name: </strong> {journalData.name}
       <br />
-      <strong>Journal mnemonic: </strong> {journalData.identifiers.mnemonic}
+      <strong>Journal mnemonic: </strong> {journalData.indexing.mnemonic}
       <br />
-      <strong>ISSN (Print): </strong> {journalData.identifiers.issnPrint}
+      <strong>ISSN (Online): </strong> {journalData.indexing.issnOnline}
       <br />
-      <strong>ISSN (Online): </strong> {journalData.identifiers.issnOnline}
+      <strong>ISSN (Print): </strong> {journalData.indexing.issnPrint}
       <br />
-      <strong>DOI:</strong> {journalData.identifiers.doi}
+      <strong>DOI:</strong> {journalData.indexing.doi}
       <br />
       <br />
       <strong>Frequency:</strong> 4 issues per year
