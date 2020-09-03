@@ -13,25 +13,26 @@ export default function handler(req, res) {
     return res.status(500).send('Bad request');
   }
 
+  // should this rewrite all keys (other than reserved names)?
+  // only whitelisted?
   const queryString = req.query.phrase ? `?phrase=${req.query.phrase}` : null;
 
   const fullPath = urlSegments.join('/');
   const fullUrl = `${bffBaseUrl}/${fullPath}${queryString ? queryString : ''}`;
-  console.log(`Fetching the data from API (via UI app proxy): ${fullUrl}`);
-
-  let fullData;
+  console.log(`[API proxy] Fetching data from: ${fullUrl}`);
 
   return axios.get(fullUrl)
-  .then(function (response) {
-    fullData = response.data.data;
-  })
-  .catch(function (error) {
-    // console.log(error.request.res.statusCode);
-    // return res.status(500).send('Bad response from API');
-    fullData = error
-  })
-  .then(function () {
-    return res.status(200).json(fullData);
-  });
-
+    .then(function (response) {
+      const fullData = response.data.data;
+      return res.status(200).json(fullData);
+    })
+    .catch(function (error) {
+      const statusCode = error.request.res.statusCode;
+      // response.config.url;
+      return res.status(500).json({
+        data: {
+          error: `[API proxy] ERR fetching data. Status code: ${statusCode}. URL requested: ${fullUrl}`,
+        },
+      });
+    });
 }

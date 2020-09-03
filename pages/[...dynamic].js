@@ -82,7 +82,8 @@ export async function getInitialProps() {
 export async function getServerSideProps({ params }) {
   const urlSegments = params.dynamic;
   const fullPath = urlSegments.join('/');
-  const escapedFullPath = encodeURIComponent(fullPath);
+  const fullPathAutoprefixed = fullPath.startsWith('/') ? fullPath : `/${fullPath}`;
+  const escapedFullPath = encodeURIComponent(fullPathAutoprefixed);
 
   if (fullPath.includes('favicon')) {
     return { props: {pageData: {}}};

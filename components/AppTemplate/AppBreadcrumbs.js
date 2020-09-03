@@ -22,6 +22,11 @@ function parseBreadcrumbs(pathname) {
     breadcrumbSegments.reduce(mergePathSegmentsReducer);
   }
 
+  return newBreadcrumbSegments;
+}
+
+function generateBreadcrumbsMarkup(pathname) {
+  const newBreadcrumbSegments = parseBreadcrumbs(pathname);
   newBreadcrumbSegments[0].first = true;
 
   return newBreadcrumbSegments.map((seg) => {
@@ -35,18 +40,18 @@ function parseBreadcrumbs(pathname) {
   });
 }
 
-export default function AppBreadcrumbsComponent() {
+export default function AppBreadcrumbsComponent({ path }) {
   const router = useRouter();
-  const pathname = router.asPath;
-  const breadcrumbData = parseBreadcrumbs(pathname);
+  const currentUrl = router.asPath;
+
+  const breadcrumbsMarkup = generateBreadcrumbsMarkup(path || currentUrl);
 
   return <header className={AppCommonStyles.header}>
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
         <nav className={AppCommonStyles.navLeft}>
-          {breadcrumbData}
+          {breadcrumbsMarkup}
         </nav>
-
 
         <nav className={AppCommonStyles.navRight}>
           <SearchInputSmall></SearchInputSmall>

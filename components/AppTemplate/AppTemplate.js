@@ -9,7 +9,8 @@ export default function AppTemplateComponent({
   children,
   title = 'OPP Demo',
   theme = 'default',
-  pageType = ''
+  pageType = '',
+  url = ''
 }) {
   return (
     <div className={`appRootContainer appTheme-${theme} appPageType-${pageType}`}>
@@ -23,7 +24,7 @@ export default function AppTemplateComponent({
       <AppHeaderForPrint></AppHeaderForPrint>
       <AppHeaderForScreen></AppHeaderForScreen>
 
-      {pageType !== 'homepage' ? <AppBreadcrumbs></AppBreadcrumbs> : ''}
+      {pageType !== 'homepage' ? <AppBreadcrumbs path={url}></AppBreadcrumbs> : ''}
 
       {children}
 
