@@ -3,11 +3,9 @@ import axios from "axios";
 import AppTemplate from '../../../../../components/AppTemplate/AppTemplate'
 import GridLayoutThreeColumnsOdd from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd'
 import GridLayoutThreeColumnsOddStyles from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd.module.css'
-// import JournalMasthead from '../../../../../components/Journals/JournalMasthead'
 import LinkDOI from '../../../../../components/Link/LinkDOI'
 import Panel from '../../../../../components/CommonElements/Panel'
 
-// http://localhost:3000/journals/bbs:elife-science/article/58807/test
 export default function JournalArticlePageRender({ journalData = {}, articleData = {} }) {
   return (
     <AppTemplate title={`${articleData.title} - OPP Demo`} pageType="article" theme="default">
@@ -138,16 +136,15 @@ export async function getServerSideProps(ctx) {
   const articleId = ctx.params.articleId;
   const journalId = ctx.params.journalId;
   const requestUrl = ctx.req.url;
-  // const reqHeaders = ctx.req.headers;
 
   const articleUrl = `${apiBase}/api/v1/journals/articles/${articleId}/getArticle`;
   const journalUrl = `${apiBase}/api/v1/journals/${journalId}/getJournal`;
-  const pageUrl = `${apiBase}/v1/pages/getPage/${encodeURIComponent(requestUrl)}`;
+  const pageDataUrl = `${apiBase}/api/v1/pages/getPage/${encodeURIComponent(requestUrl)}`;
 
   return axios.all([
     axios.get(articleUrl),
     axios.get(journalUrl),
-    axios.get(pageUrl),
+    axios.get(pageDataUrl),
   ])
   .then(responseArr => {
     // console.log(responseArr.map((x)=> x.data))
@@ -156,7 +153,7 @@ export async function getServerSideProps(ctx) {
       props: {
         articleData: responseArr[0].data,
         journalData: responseArr[1].data,
-        // pageData: responseArr[2].data,
+        pageData: responseArr[2].data,
       },
     }
   })

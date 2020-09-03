@@ -7,8 +7,7 @@ import BlockRenderer from '../components/BlockRenderer'
 // or bounce to an error page
 export default function DynamicRouteHandler({pageData}) {
   const router = useRouter();
-  const { dynamic } = router.query;
-  const urlSegments = dynamic;
+  const urlSegments = router.query.dynamic;
 
   if (!Array.isArray(urlSegments) || !urlSegments.length) {
     return <AppTemplate>
