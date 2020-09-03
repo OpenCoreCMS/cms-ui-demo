@@ -5,45 +5,40 @@ import GridLayoutThreeColumnsOdd from '../../../../../components/GridLayout/Grid
 import GridLayoutThreeColumnsOddStyles from '../../../../../components/GridLayout/GridLayoutThreeColumnsOdd.module.css'
 // import JournalMasthead from '../../../../../components/Journals/JournalMasthead'
 import LinkDOI from '../../../../../components/Link/LinkDOI'
+import Panel from '../../../../../components/CommonElements/Panel'
 
 // http://localhost:3000/journals/bbs:elife-science/article/58807/test
-export default function JournalArticlePageRender({ journalData, articleData }) {
+export default function JournalArticlePageRender({ journalData = {}, articleData }) {
   return (
     <AppTemplate title={`${articleData.title} - OPP Demo`} pageType="article" theme="default">
 
       <main>
         <GridLayoutThreeColumnsOdd>
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <div className="panel">
-              <strong>Article info</strong>
+            <Panel>
+              <strong>Article navigation</strong><br />
+
+              <div className="textCenter">
+                <img className="coverImageMedium" src="https://dummyimage.com/240x320/aaa/fff.png&text=240x320" alt={`The issue of the "${journalData.name}" journal in which this article has been published`} />
+                <br />
+                <a href={`/journals/${journalData.id}/current-issue`}>
+                  {journalData.name}, Sep 20
+                </a>
+              </div>
+
               <br />
               <span>Volume: {articleData.volume}</span><br />
               <span>Date: {articleData.published}</span><br />
-              <span>Keywords: {articleData.keywords.join(', ')}</span><br />
-              <span>Version: {articleData.version}</span><br />
-              <span>ID: {articleData.id}</span><br />
 
-              <span>
-                Formats:
-                {articleData.pdf ? 'PDF' : ''},
-                {articleData.xml ? 'XML' : ''}
-              </span><br />
+            </Panel>
 
-
-              <span className="subjects">
-                <strong>Subjects: </strong>
-                {articleData.subjects ? articleData.subjects.map(function(subject, index){
-                  return <span key={`author-${index}`}>{subject.name} , </span>;
-                }) : ''}
-              </span><br />
-
-              In collections...
-
-            </div>
             <br />
-            <div className="panel">
-              On this page
-            </div>
+
+            <Panel>
+              On this page...
+
+              [progress bar / scroll spy]
+            </Panel>
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridBody}>
@@ -88,15 +83,35 @@ export default function JournalArticlePageRender({ journalData, articleData }) {
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <div className="panel">
-              Journal info
-            </div>
-            <div className="panel">
+            <Panel>
+              <strong>Article metadata</strong><br />
+
+              <span>Version: {articleData.version}</span><br />
+              <span>ID: {articleData.id}</span><br />
+
+              <span>
+                Formats:
+                {articleData.pdf ? 'PDF' : ''},
+                {articleData.xml ? 'XML' : ''}
+              </span><br />
+
+              <span>Keywords: {articleData.keywords.join(', ')}</span><br />
+
+              <span className="subjects">
+                <strong>Subjects: </strong>
+                {articleData.subjects ? articleData.subjects.map(function(subject, index){
+                  return <span key={`author-${index}`}>{subject.name} , </span>;
+                }) : ''}
+              </span><br />
+
+              In collections...
+            </Panel>
+            <Panel>
               Metrics
-            </div>
-            <div className="panel">
+            </Panel>
+            <Panel>
               Related publications
-            </div>
+            </Panel>
           </div>
         </GridLayoutThreeColumnsOdd>
 
@@ -126,17 +141,44 @@ export async function getInitialProps() {
   }
 }
 
-export async function getServerSideProps({ params }) {
-  const articleId = params.articleId;
+export async function getServerSideProps(ctx) {
+  const apiBase = 'http://localhost:3000';
+  const articleId = ctx.params.articleId;
+  const journalId = ctx.params.journalId;
+  const requestUrl = ctx.req.url;
+  // const reqHeaders = ctx.req.headers;
 
-  const { data } = await axios.get(
-    `http://localhost:3000/api/v1/articles/getArticle/${articleId}`
-  );
-  // console.log(data);
-  return {
-    props: {
-      journalData: {},
-      articleData: data,
-    },
-  };
+  const articleUrl = `${apiBase}/api/v1/articles/getArticle/${articleId}`;
+  const journalUrl = `${apiBase}/api/v1/journals/getJournal/${journalId}`;
+  const pageUrl = `${apiBase}/v1/pages/getPage/${encodeURIComponent(requestUrl)}`;
+
+  return axios.all([
+    axios.get(articleUrl),
+    axios.get(journalUrl),
+    axios.get(pageUrl),
+  ])
+  .then(responseArr => {
+    console.log(responseArr.map((x)=> x.data))
+
+    return {
+      props: {
+        articleData: responseArr[0].data,
+        journalData: responseArr[1].data,
+        pageData: responseArr[2].data,
+      },
+    }
+  })
+  .catch(function (error) {
+    console.log(error);
+    return { error: 'Could not fetch data' }
+  });
+
+  // const { data } = await axios.get(articleUrl);
+  // // console.log(data);
+  // return {
+  //   props: {
+  //     journalData: {},
+  //     articleData: data,
+  //   },
+  // };
 }
