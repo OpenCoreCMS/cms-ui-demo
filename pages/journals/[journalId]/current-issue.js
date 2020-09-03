@@ -25,7 +25,8 @@ export default function JournalItemCurrentIssuePageRender({searchResults}) {
       <main>
         <GridLayoutTwoColumnsOdd>
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
-            <strong>Current issue contains {searchResults.total} articles.</strong>
+            <h2>Current issue</h2>
+            <strong>There are {searchResults.total} articles in the {journalData.currentIssue} issue of {journalData.name}.</strong>
             <ListOfResults data={searchResults.results}></ListOfResults>
           </div>
 

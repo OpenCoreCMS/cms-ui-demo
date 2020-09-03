@@ -10,8 +10,8 @@ export default function JournalIndexPageRender({ allJournals }) {
           <h1>
             Journal content
           </h1>
-          <p>In the Open Publishing Platform demo site we publish Open Access content
-          from over 50 journals.</p>
+          <p>In the Open Publishing Platform demo site we publish
+          Open Access content made available by other publishers.</p>
         </div>
       </div>
 
