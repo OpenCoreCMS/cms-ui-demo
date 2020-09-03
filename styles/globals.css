@@ -97,6 +97,3 @@ main {
   text-align: center;
   margin: 3px;
 }
-
-.coverImageSmall { max-height: 160px; max-width: 120px;  }
-.coverImageMedium { max-height: 320px; max-width: 240px;  }
