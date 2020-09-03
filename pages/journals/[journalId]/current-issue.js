@@ -5,10 +5,10 @@ import AppTemplate from '../../../components/AppTemplate/AppTemplate'
 import GridLayoutTwoColumnsOdd from '../../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
 import ListOfResults from '../../../components/Blocks/ListOfResults'
-import SearchResultsFilters from '../../../components/Blocks/SearchResultsFilters'
+import ListOfResultsAsideFilters from '../../../components/Blocks/ListOfResultsAsideFilters'
 import JournalMasthead from '../../../components/Journals/JournalMasthead'
 
-export default function JournalItemCurrentIssuePageRender({data}) {
+export default function JournalItemCurrentIssuePageRender({searchResults}) {
   const router = useRouter();
   const { journalId } = router.query;
 
@@ -25,14 +25,12 @@ export default function JournalItemCurrentIssuePageRender({data}) {
       <main>
         <GridLayoutTwoColumnsOdd>
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
-            <strong>Current issue contains {data.length} articles.</strong>
-            <ListOfResults data={data}></ListOfResults>
+            <strong>Current issue contains {searchResults.total} articles.</strong>
+            <ListOfResults data={searchResults.results}></ListOfResults>
           </div>
 
           <div className={GridLayoutTwoColumnsOddStyles.gridAside}>
-            <div className="panel">
-              <SearchResultsFilters></SearchResultsFilters>
-            </div>
+            <ListOfResultsAsideFilters></ListOfResultsAsideFilters>
           </div>
         </GridLayoutTwoColumnsOdd>
       </main>
@@ -62,13 +60,13 @@ export async function getServerSideProps({ params }) {
   const journalId = params.journalId;
 
   const { data } = await axios.get(
-    `http://localhost:3000/api/v1/journals/${journalId}/getArticles`
+    `http://localhost:3000/api/v1/journals/${journalId}/getCurrentIssue`
   );
   // console.log(data);
   return {
     props: {
       journalData: {},
-      data,
+      searchResults: data,
     },
   };
 }
