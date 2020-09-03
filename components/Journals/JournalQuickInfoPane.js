@@ -1,18 +1,18 @@
+import Panel from '../CommonElements/Panel'
+
 export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
   return <div>
-    <div className="textCenter">
-      <img src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />
-      <a href={`/journals/${journalData.id}/current-issue`}>
-        Current issue (Sep 20):<br /><i>Dummy content in publishing</i>
-      </a>
-    </div>
+    <Panel>
+      <div className="textCenter">
+        <img className="coverImageMedium" src={`https://dummyimage.com/240x320/aaa/fff.png&text=${journalData.id}`} alt="Current issue of journal" />
+        <br />
+        <a href={`/journals/${journalData.id}/current-issue`}>
+          Current issue (Sep 20):<br /><i>Dummy content in publishing</i>
+        </a>
+      </div>
+    </Panel>
 
-    <br /><br />
-
-    <hr />
-
-    <div>
-      <h3>Bibliographic info</h3>
+    <Panel title="Bibliographic info" collapsible={true}>
       <strong>Journal name: </strong> {journalData.name}
       <br />
       <strong>Journal mnemonic: </strong> {journalData.identifiers.mnemonic}
@@ -29,12 +29,9 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       <strong>Publishing dates:</strong> 2004-present
       <br />
       <strong>Publisher:</strong> <a className="linkExternal" target="_blank" rel="noopener" href={journalData.publisher.url}>{journalData.publisher.name}</a>
-    </div>
+    </Panel>
 
-    <hr />
-
-    <div>
-      <h3>Information</h3>
+    <Panel title="Information" collapsible={true}>
       <p>
         <strong>Chief Editor: </strong> Professor John Doe, Institute of Science
       </p>
@@ -44,27 +41,24 @@ export default function JournalQuickInfoPaneComponent({ journalData = {} }) {
       <p>
         <a className="wip" href="#">Author guidelines</a>
       </p>
+    </Panel>
 
-      <hr />
-      <h3>Journal title history</h3>
+    <Panel title="Journal title history" collapsible={true}>
       <p>
         This journal has been published under other titles in the past.
         <br />
         <br />
-        <a className="wip" href="#">View this journal's title history</a>
+        <a className="wip" href="#">View this journal&apos;s title history</a>
       </p>
-    </div>
+    </Panel>
 
-    <hr />
-
-    <div>
-      <h3>Metrics</h3>
+    <Panel title="Metrics" collapsible={true}>
       <p>
         <strong>Impact Factor:</strong> 3.11
       </p>
       <p>
         <strong>Monthly article views:</strong> 93,234
       </p>
-    </div>
+    </Panel>
   </div>;
 }

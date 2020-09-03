@@ -4,7 +4,7 @@ import AppTemplate from '../../components/AppTemplate/AppTemplate'
 import GridLayoutTwoColumnsOdd from '../../components/GridLayout/GridLayoutTwoColumnsOdd'
 import GridLayoutTwoColumnsOddStyles from '../../components/GridLayout/GridLayoutTwoColumnsOdd.module.css'
 import ListOfResults from '../../components/Blocks/ListOfResults'
-import SearchResultsFilters from '../../components/Blocks/SearchResultsFilters'
+import ListOfResultsAsideFilters from '../../components/Blocks/ListOfResultsAsideFilters'
 
 export default function SearchPageRender({ searchResults }) {
   const router = useRouter();
@@ -27,9 +27,7 @@ export default function SearchPageRender({ searchResults }) {
           </div>
 
           <div className={GridLayoutTwoColumnsOddStyles.gridAside}>
-            <div className="panel">
-              <SearchResultsFilters aggs={searchResults.aggs}></SearchResultsFilters>
-            </div>
+            <ListOfResultsAsideFilters aggs={searchResults.aggs}></ListOfResultsAsideFilters>
           </div>
         </GridLayoutTwoColumnsOdd>
       </main>

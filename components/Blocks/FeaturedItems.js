@@ -6,7 +6,7 @@ export default function FeaturedItemsComponent({ items = [{id: '57162', title: '
   const markup = items.map((item) => (
     <span className={styles.item} key={item.id}>
       <span className={styles.image}>
-        <img src={`https://dummyimage.com/120x160/aaa/fff.png&text=${item.id}`} />
+        <img className="coverImageSmall" src={`https://dummyimage.com/120x160/aaa/fff.png&text=${item.id}`} />
       </span>
       <span className={styles.description}>
         <Link href="/journals/[journalId]/article/[itemId]/article-name" as={`/journals/${item.journalId}/article/${item.id}/article-name`}>

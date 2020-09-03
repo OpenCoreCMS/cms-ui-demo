@@ -74,9 +74,7 @@ export default function JournalItemPageRender({ journalData }) {
           </div>
 
           <div className={GridLayoutTwoColumnsOddStyles.gridAside}>
-            <div className="panel">
-              <JournalQuickInfoPane journalData={journalData}></JournalQuickInfoPane>
-            </div>
+            <JournalQuickInfoPane journalData={journalData}></JournalQuickInfoPane>
           </div>
         </GridLayoutTwoColumnsOdd>
       </main>
