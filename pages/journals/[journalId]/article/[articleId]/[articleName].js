@@ -14,7 +14,7 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
       <main>
         <GridLayoutThreeColumnsOdd>
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <Panel title="Article context">
+            <Panel style="blank">
               <div className="textCenter">
                 <img className="coverImageMedium" src="https://dummyimage.com/240x320/aaa/fff.png&text=240x320" alt={`The issue of the "${journalData.name}" journal in which this article has been published`} />
                 <br />
@@ -22,16 +22,26 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
                   {journalData.name}, Sep 20
                 </a>
               </div>
-
-              <br />
-              <span>Volume: {articleData.volume}</span><br />
-              <span>Date: {articleData.published}</span><br />
-
             </Panel>
 
-            <br />
 
-            <Panel title="Page navigation">
+            <Panel title="Article metadata" userSelectable={true} style="blank">
+              <span>Published date: {articleData.published}</span><br />
+              <span>Article ID: {articleData.id}</span><br />
+              <span>Article version: {articleData.version}</span><br />
+              <br />
+              <span>Copyright: The Authors, 2020</span><br />
+              <span>License: CC-BY</span><br />
+              <span>Open Data: OD</span><br />
+              <span>
+                Formats: {articleData.pdf ? 'PDF' : ''}, {articleData.xml ? 'XML' : ''}
+              </span>
+              <br />
+              <span>Time to read: 10 minutes</span>
+            </Panel>
+
+
+            <Panel title="Page navigation" style="blank">
               [progress bar / scroll spy]
             </Panel>
           </div>
@@ -78,31 +88,45 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
           </div>
 
           <div className={GridLayoutThreeColumnsOddStyles.gridAside}>
-            <Panel title="Article metadata">
-              <span>Version: {articleData.version}</span><br />
-              <span>ID: {articleData.id}</span><br />
+            <Panel title="Metrics">
+              Altmetrics<br />
+              Abstract views <br />
+              Full text views<br />
+              Cited by<br />
+            </Panel>
+
+            <Panel title="Collections" collapsible={true}>
+              <span>
+                <strong>Keywords: </strong>
+                {articleData.keywords.join(', ')}
+              </span>
+
+              <br />
 
               <span>
-                Formats:
-                {articleData.pdf ? 'PDF' : ''},
-                {articleData.xml ? 'XML' : ''}
-              </span><br />
-
-              <span>Keywords: {articleData.keywords.join(', ')}</span><br />
-
-              <span className="subjects">
                 <strong>Subjects: </strong>
                 {articleData.subjects ? articleData.subjects.map(function(subject, index){
                   return <span key={`author-${index}`}>{subject.name} , </span>;
-                }) : ''}
-              </span><br />
+                }) : '...'}
+              </span>
 
-              In collections...
+              <br />
+
+              <span>
+                <strong>In collections: </strong>
+                ...
+              </span>
             </Panel>
 
-            <Panel title="Metrics"></Panel>
+            <Panel title="Article actions" collapsible={true}>
+              Download PDF<br />
+              Cite<br />
+              Share<br />
+              Add to list<br />
+              Toggle annotations<br />
+            </Panel>
 
-            <Panel title="Related publications"></Panel>
+            <Panel title="Related publications" collapsible={true}></Panel>
           </div>
         </GridLayoutThreeColumnsOdd>
 

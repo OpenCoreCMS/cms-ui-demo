@@ -8,7 +8,7 @@ export default function JournalMastheadComponent({ journalData }) {
         {journalData.name}
       </h1>
       <br />
-      <nav className={styles.tabs}>
+      <nav className={`${styles.tabs} noUserSelect`}>
         <AppLink className={`${styles.tab} navTab`} href={`/journals/${journalData.id}`}>
           <span>Journal home</span>
         </AppLink>

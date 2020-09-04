@@ -111,5 +111,6 @@ main {
   border-bottom-color: transparent !important;
 }
 
-.block {display: block}
+.noUserSelect { user-select: none; }
+.block { display: block; }
 .paginationBox {border: 1px solid #eee; border-radius: 4px; padding: 0.5rem; margin: 1rem 0;}

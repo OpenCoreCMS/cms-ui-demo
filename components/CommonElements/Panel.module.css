@@ -5,6 +5,10 @@
   margin-bottom: 1rem; padding: 1rem;
 }
 
+.panel.blank {
+  background: transparent; border: none;
+}
+
 .panelTitle {
   padding-bottom: 0.75rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem;
 }
