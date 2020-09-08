@@ -93,9 +93,18 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
               Abstract views <br />
               Full text views<br />
               Cited by<br />
+              <a>View more metrics</a>
             </Panel>
 
-            <Panel title="Collections" collapsible={true}>
+            <Panel title="Article actions" collapsible={true}>
+              Download PDF<br />
+              Cite<br />
+              Share<br />
+              Add to list<br />
+              Toggle annotations<br />
+            </Panel>
+
+            <Panel title="Linked content" collapsible={true}>
               <span>
                 <strong>Keywords: </strong>
                 {articleData.keywords.join(', ')}
@@ -116,14 +125,6 @@ export default function JournalArticlePageRender({ journalData = {}, articleData
                 <strong>In collections: </strong>
                 ...
               </span>
-            </Panel>
-
-            <Panel title="Article actions" collapsible={true}>
-              Download PDF<br />
-              Cite<br />
-              Share<br />
-              Add to list<br />
-              Toggle annotations<br />
             </Panel>
 
             <Panel title="Related publications" collapsible={true}></Panel>
