@@ -38,8 +38,8 @@ export default function JournalItemPageRender({ journalData }) {
             <div>
               <h3>Recent articles</h3>
               <GridLayoutTwoColumnsEven>
-                <div><FeaturedItems></FeaturedItems></div>
-                <div><FeaturedItems></FeaturedItems></div>
+                <div><FeaturedItems items={['57162']}></FeaturedItems></div>
+                <div><FeaturedItems items={['57162']}></FeaturedItems></div>
 
               </GridLayoutTwoColumnsEven>
             </div>
@@ -87,7 +87,7 @@ export async function getServerSideProps({ params }) {
   const journalId = params.journalId;
 
   const { data } = await axios.get(
-    `http://localhost:3000/api/v1/journals/${journalId}/getJournal`
+    `http://localhost:3000/api/v1/publications/journals/${journalId}/getJournal`
   );
   // console.log(data);
   return {

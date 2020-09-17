@@ -163,8 +163,8 @@ export async function getServerSideProps(ctx) {
   const journalId = ctx.params.journalId;
   const requestUrl = ctx.req.url;
 
-  const articleUrl = `${apiBase}/api/v1/journals/articles/${articleId}/getArticle`;
-  const journalUrl = `${apiBase}/api/v1/journals/${journalId}/getJournal`;
+  const articleUrl = `${apiBase}/api/v1/publications/journals/articles/${articleId}/getArticle`;
+  const journalUrl = `${apiBase}/api/v1/publications/journals/${journalId}/getJournal`;
   const pageDataUrl = `${apiBase}/api/v1/pages/getPage/${encodeURIComponent(requestUrl)}`;
 
   return axios.all([
