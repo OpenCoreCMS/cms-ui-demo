@@ -7,7 +7,7 @@ export default function AppFooterComponent() {
   return <footer className={AppCommonStyles.footer}>
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
-        <nav className={AppCommonStyles.navLeft}>
+        <nav className={AppCommonStyles.navLeft} role="navigation" aria-label="Footer">
           <Link href="/help/about">
             <a className={AppCommonStyles.navItem}>About</a>
           </Link>

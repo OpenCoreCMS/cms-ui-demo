@@ -2,9 +2,10 @@ import Link from 'next/link'
 
 import styles from './FeaturedItems.module.css'
 
-export default function FeaturedItemsComponent({ items = [{id: '57162', title: 'Lorem ipsum', journalId: 'eLife'}] }) {
+export default function FeaturedItemsComponent({ items = [] }) {
+
   const markup = items.map((item) => (
-    <span className={styles.item} key={item.id}>
+    <li className={styles.item} key={item.id}>
       <span className={styles.image}>
         <img className="coverImageSmall" src={`https://dummyimage.com/120x160/aaa/fff.png&text=${item.id}`} />
       </span>
@@ -15,7 +16,7 @@ export default function FeaturedItemsComponent({ items = [{id: '57162', title: '
         <span>{item.authorLine}</span><br />
         <span>{item.titlePrefix}</span><br />
       </span>
-    </span>
+    </li>
   ));
 
   return <ul className={styles.featuredItems}>{markup}</ul>;

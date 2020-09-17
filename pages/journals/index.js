@@ -5,7 +5,7 @@ import AppTemplate from '../../components/AppTemplate/AppTemplate'
 export default function JournalIndexPageRender({ allJournals }) {
   return (
     <AppTemplate title="Our journals - OPP Demo">
-      <div className="mastheadContainer">
+      <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>
             Journal content

@@ -7,7 +7,7 @@ export default function HomePageRender() {
     <AppTemplate title="Home - OPP Demo" pageType="homepage" theme="default">
       <main className={styles.main}>
         <div className="maxWidthLimitedContainer textCenter">
-          <img src="/public/oppdp-icon-white-500.png" height="180" />
+          <img src="/public/oppdp-icon-white-500.png" height="180" alt="OPP Demo Platform logo" />
           <br />
           <h1 className={styles.title}>
             OPP Demo Platform
@@ -19,12 +19,12 @@ export default function HomePageRender() {
 
           <div className={styles.grid}>
             <a href="/journals" className={styles.card}>
-              <h3>Published Journals &rsaquo;</h3>
+              <h2>Published Journals &rsaquo;</h2>
               <p>See example journals published with Open Publishing Platform.</p>
             </a>
 
             <a href="/help/about" className={styles.card}>
-              <h3>Learn more &rsaquo;</h3>
+              <h2>Learn more &rsaquo;</h2>
               <p>Learn more about Open Publishing Platform</p>
             </a>
 

@@ -5,9 +5,9 @@ export default function AppHeaderComponent() {
   return <header className={AppCommonStyles.header} style={{background: '#f7f7f7'}}>
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
-        <nav className={AppCommonStyles.navLeft}>
+        <nav className={AppCommonStyles.navLeft} role="navigation" aria-label="Main">
           <AppLink href="/" className={AppCommonStyles.navItem}>
-              <img className={AppCommonStyles.brandLogo} src="/public/oppdp-full-logo-blue.png" />
+              <img className={AppCommonStyles.brandLogo} src="/public/oppdp-full-logo-blue.png" alt="OPP Demo Platform logo" />
           </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>
@@ -29,7 +29,7 @@ export default function AppHeaderComponent() {
           </AppLink>
         </nav>
 
-        <nav className={AppCommonStyles.navRight}>
+        <nav className={AppCommonStyles.navRight} role="navigation" aria-label="User">
           <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
             <span>Language</span>
           </AppLink>

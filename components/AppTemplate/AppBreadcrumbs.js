@@ -49,7 +49,7 @@ export default function AppBreadcrumbsComponent({ path }) {
   return <header className={AppCommonStyles.header}>
     <div className="maxWidthLimitedContainer">
       <div className="flexContainer">
-        <nav className={AppCommonStyles.navLeft}>
+        <nav className={AppCommonStyles.navLeft} role="navigation" aria-label="Breadcrumbs">
           {breadcrumbsMarkup}
         </nav>
 
