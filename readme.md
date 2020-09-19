@@ -4,7 +4,7 @@
 
 **This application requires an OPP BFF instance to use as data source.**
 
-See [`OPP BFF demo`](https://github.com/OpenPublishingPlatform/opp-bff-demo)
+See [OPP BFF demo](https://github.com/OpenPublishingPlatform/opp-bff-demo)
 and follow the instructions in that repo before running this application.
 
 
@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-**OPP UI** application will start on [`localhost:3000`](http://localhost:3000).
+**OPP UI** application will start on [localhost:3000](http://localhost:3000).
 
 
 ## Configuration
