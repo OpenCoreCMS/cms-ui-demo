@@ -9,20 +9,15 @@ and follow the instructions in that repo before running this application.
 
 
 ## Quick start
-
-1. Clone the repo
 ```
+# 1. Clone the repo
 git clone https://github.com/OpenPublishingPlatform/opp-ui-demo.git
 cd opp-ui-demo
-```
 
-2. Install devDependencies
-```
+# 2. Install dependencies
 npm install
-```
 
-3. Start the app
-```
+# 3. Start the app
 npm run dev
 ```
 
