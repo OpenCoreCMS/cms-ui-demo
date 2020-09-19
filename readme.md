@@ -1,14 +1,15 @@
-# OPP UI
+# Open Publishing Platform UI Demo
 
 **OPP UI** application is a demo site to showcase the Open Publishing Platform.
 
 **This application requires an OPP BFF instance to use as data source.**
 
-See [OPP BFF demo](https://github.com/OpenPublishingPlatform/opp-bff-demo)
-and follow the instructions in that repo before running this application.
+See [**OPP BFF** demo repo](https://github.com/OpenPublishingPlatform/opp-bff-demo)
+and follow the instructions there before running **OPP UI** application.
 
 
 ## Quick start
+
 ```
 # 1. Clone the repo
 git clone https://github.com/OpenPublishingPlatform/opp-ui-demo.git
