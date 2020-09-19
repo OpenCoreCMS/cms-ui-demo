@@ -42,7 +42,7 @@ export default function AppHeaderComponent() {
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <AppLink href="" className={`wip ${AppCommonStyles.navItem}`}>
+          <AppLink href="/user/signin" className={AppCommonStyles.navItem}>
             <span>Sign in</span>
           </AppLink>
         </nav>
