@@ -1,6 +1,6 @@
 // We proxy all requests to the dedicated BFF (Backend For Frontend)
 function constructQueryString(qs) {
-  const allowedProps = ['phrase', 'pageNumber', 'pageSize'];
+  const allowedProps = ['phrase', 'pageNumber', 'pageSize', 'subjectId', 'type'];
   const qsElements = [];
 
   allowedProps.forEach((prop) => {
@@ -11,7 +11,6 @@ function constructQueryString(qs) {
 
   return qsElements.length ? `?${qsElements.join('&')}` : '';
 }
-
 
 // eslint-disable-next-line no-undef
 const axios = require('axios');
@@ -34,14 +33,19 @@ export default function handler(req, res) {
   const fullUrl = `${bffBaseUrl}/${fullPath}${queryString ? queryString : ''}`;
   console.log(`[API proxy] Fetching data from: ${fullUrl}`);
 
-  return axios.get(fullUrl)
+  const axiosProxyConfig = {
+    method: 'get',
+    url: fullUrl,
+    headers: req && req.headers && req.headers.cookie ? { cookie: req.headers.cookie } : undefined
+  }
+
+  return axios(axiosProxyConfig)
     .then(function (response) {
       const fullData = response.data.data;
       return res.status(200).json(fullData);
     })
     .catch(function (error) {
       const statusCode = error.request.res.statusCode;
-      // response.config.url;
       return res.status(500).json({
         data: {
           error: `[API proxy] ERR fetching data. Status code: ${statusCode}. URL requested: ${fullUrl}`,
