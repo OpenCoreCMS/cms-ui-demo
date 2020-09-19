@@ -9,12 +9,16 @@ import AppLink from '../../../components/Link/AppLink'
 export default function SubjectsIndexPageRender({ subjectData }) {
   return (
     <AppTemplate title={`Subject - ${subjectData.name} - OPP UI Demo`}>
+      <div className="mastheadContainer" role="banner">
+        <div className="maxWidthLimitedContainer">
+          <h1>{subjectData.name}</h1>
+          <p><DisplayHTML>{subjectData.description}</DisplayHTML></p>
+        </div>
+      </div>
 
       <main>
         <GridLayoutTwoColumnsOdd>
           <div className={GridLayoutTwoColumnsOddStyles.gridBody}>
-            <h1>{subjectData.name}</h1>
-            <p className="pinned"><DisplayHTML>{subjectData.description}</DisplayHTML></p>
 
             <AppLink href={`/subjects/${subjectData.id}/listing`}>
               <span>Content listing</span>
