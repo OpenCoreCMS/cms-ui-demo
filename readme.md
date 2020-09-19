@@ -1,10 +1,34 @@
 # OPP UI
 
-## Getting started
+**OPP UI** application is a demo site to showcase the Open Publishing Platform.
 
-Clone the repo and start the app with `npm run dev`.
+**This application requires an OPP BFF instance to use as data source.**
 
-The application will start on [`localhost:3000`](http://localhost:3000).
+See [`OPP BFF demo`](https://github.com/OpenPublishingPlatform/opp-bff-demo)
+and follow the instructions in that repo before running this application.
 
-UI application will fetch the data from **OPP BFF** at localhost:4000,
-make sure to start that project up as well.
+
+## Quick start
+
+1. Clone the repo
+```
+git clone https://github.com/OpenPublishingPlatform/opp-ui-demo.git
+cd opp-ui-demo
+```
+
+2. Install devDependencies
+```
+npm install
+```
+
+3. Start the app
+```
+npm run dev
+```
+
+**OPP UI** application will start on [`localhost:3000`](http://localhost:3000).
+
+
+## Configuration
+
+**OPP UI** application does not currently take any configuration.
