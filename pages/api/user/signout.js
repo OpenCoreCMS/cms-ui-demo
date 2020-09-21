@@ -3,23 +3,12 @@ const axios = require('axios');
 const bffBaseUrl = 'http://localhost:4000/api';
 
 export default function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.redirect('/user/signin');
-  }
-
-  const payload = {
-    email: req.body.email,
-    password: req.body.password,
-  };
-
-  const fullUrl = `${bffBaseUrl}/v1/users/login`;
-
-  console.log(`[API proxy] Authenticating user: ${payload.email}`);
+  const fullUrl = `${bffBaseUrl}/v1/users/logout`;
+  console.log(`[API proxy] Deauthenticating user`);
 
   const axiosProxyConfig = {
-    method: 'POST',
+    method: 'GET',
     url: fullUrl,
-    data: payload,
     headers: req && req.headers && req.headers.cookie ? { 'set-cookie': req.headers.cookie } : undefined
   };
 
@@ -27,7 +16,6 @@ export default function handler(req, res) {
     .then(function (response) {
       const responseCookies = response.headers['set-cookie'];
       res.setHeader('Set-Cookie', responseCookies[0])
-      // res.setHeader('Set-Cookie', `OPP_Session=${sessionId}; HttpOnly; Secure`)
 
       return res.redirect('/user');
     })

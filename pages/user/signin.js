@@ -1,10 +1,8 @@
-// import Router from 'next/router'
-import {useRouter}  from 'next/router';
+import _ from 'lodash'
 import axios from 'axios'
-// import Link from 'next/link'
 import AppTemplate from '../../components/AppTemplate/AppTemplate'
 
-export default function SignInPageRender({ currentUserData = {} }) {
+export default function SignInPageRender() {
   return (
     <AppTemplate title="Sign in - OPP UI Demo">
       <div className="mastheadContainer" role="banner">
@@ -14,8 +12,6 @@ export default function SignInPageRender({ currentUserData = {} }) {
       </div>
       <main>
         <div className="maxWidthLimitedContainer">
-        { currentUserData.email ?
-          `Signed in as ${currentUserData.email}.` :
           <form action="/api/user/signin" method="POST">
             <input type="text" name="email" />
             <br />
@@ -23,7 +19,6 @@ export default function SignInPageRender({ currentUserData = {} }) {
             <br />
             <button type="submit">Sign in</button>
           </form>
-         }
         </div>
       </main>
     </AppTemplate>
@@ -31,33 +26,29 @@ export default function SignInPageRender({ currentUserData = {} }) {
 }
 
 export async function getServerSideProps(ctx) {
-  // get user session status - if authed redirect
-  let targetUrl = `http://localhost:3000/api/v1/users/getCurrentUser`;
+  const targetUrl = `http://localhost:3000/api/v1/users/getCurrentUser`;
+  const currentCookie = _.get(ctx, 'req.headers.cookie');
+  const headers = currentCookie ? { cookie: currentCookie } : undefined;
 
   const axiosProxyConfig = {
     method: 'get',
     url: targetUrl,
-    headers: ctx && ctx.req && ctx.req.headers ? { cookie: ctx.req.headers.cookie } : undefined
+    headers: headers
   }
 
   const { data } = await axios(axiosProxyConfig);
-  console.log(data);
+
+  // if signed in redirect to /user
+  if (data && data.authenticated) {
+    console.log('User authenticated, should redirect.');
+    // ctx.res.writeHead(302, { Location: '/user' });
+  } else {
+    console.log('User not authenticated, showing sign in form.');
+  }
 
   return {
     props: {
-      currentUserData: data || {},
-      // currentUserData: {},
+      currentUserData: {},
     },
   };
-}
-
-
-export async function componentDidMount ({ currentUserData }) {
-  const router = useRouter()
-
-  // const { phrase } = router.query;
-  // const {pathname} = Router
-  if (currentUserData.email) {
-    router.push('/user')
-  }
 }

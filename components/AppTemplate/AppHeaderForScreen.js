@@ -1,5 +1,6 @@
 import AppLink from '../Link/AppLink'
 import AppCommonStyles from './AppCommon.module.css'
+import UserSignInIndicator from './UserSignInIndicator'
 
 export default function AppHeaderComponent() {
   return <header className={AppCommonStyles.header} style={{background: '#f7f7f7'}}>
@@ -42,9 +43,7 @@ export default function AppHeaderComponent() {
 
           <span className={AppCommonStyles.pipe}></span>
 
-          <AppLink href="/user/signin" className={AppCommonStyles.navItem}>
-            <span>Sign in</span>
-          </AppLink>
+          <UserSignInIndicator />
         </nav>
       </div>
     </div>
