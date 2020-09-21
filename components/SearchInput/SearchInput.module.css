@@ -16,7 +16,7 @@
     height: 38px;
     padding: 6px 10px;
     background: rgba(255,255,255,0.9);
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px !important;
   }
 
   .smallSearchSubmit {
@@ -24,11 +24,11 @@
     height: 38px; padding: 10px;
     background: #2390d6;
     color: white;
-    border-radius: 0 5px 5px 0;
-    border-width: 1px 1px 1px 0;
+    border-radius: 0 5px 5px 0 !important;
+    border-width: 1px 1px 1px 0 !important;
   }
   .smallSearchSubmit:active, .smallSearchSubmit:focus, .smallSearchSubmit:hover {
-    color: #0a5c9a;
+    background: #0a5c9a;
   }
 
 /* Jumbotron */
@@ -46,7 +46,7 @@
     flex-basis: 70%;
     line-height: 20px; height: 40px; padding: 20px;
     background: rgba(255,255,255,0.9);
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px !important;
   }
 
   .jumbotronSearchSubmit {
@@ -54,9 +54,9 @@
     height: 42px; padding: 10px;
     background: #2390d6;
     color: white;
-    border-radius: 0 5px 5px 0;
-    border-width: 1px 1px 1px 0;
+    border-radius: 0 5px 5px 0 !important;
+    border-width: 1px 1px 1px 0 !important;
   }
   .jumbotronSearchSubmit:active, .jumbotronSearchSubmit:focus, .jumbotronSearchSubmit:hover {
-    color: #0a5c9a;
+    background: #0a5c9a;
   }
