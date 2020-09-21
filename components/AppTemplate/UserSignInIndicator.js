@@ -13,9 +13,9 @@ export default function UserSignInIndicator() {
   if (loading) return markupNotSignedIn;
   if (error) return "[Error]";
 
-  const markupSignedIn = <span className={AppCommonStyles.navItem}>
+  const markupSignedIn = <AppLink href="/user" className={AppCommonStyles.navItem}>
     <span>Signed in as {data.firstname} {data.lastname}</span>
-  </span>;
+  </AppLink>;
 
   return data.authenticated ? markupSignedIn : markupNotSignedIn;
 }

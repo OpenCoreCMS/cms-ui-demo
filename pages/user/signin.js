@@ -13,10 +13,22 @@ export default function SignInPageRender() {
       <main>
         <div className="maxWidthLimitedContainer">
           <form action="/api/user/signin" method="POST">
-            <input type="text" name="email" />
+
+            <label>
+              <span>Email</span>
+              <input type="text" name="email" />
+            </label>
+
             <br />
-            <input type="password" name="password" />
+
+            <label>
+              <span>Password</span>
+              <input type="password" name="password" />
+            </label>
+
             <br />
+            <br />
+
             <button type="submit">Sign in</button>
           </form>
         </div>
