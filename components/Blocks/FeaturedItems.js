@@ -1,10 +1,21 @@
+import getArticles from '../_hooks/getArticles'
+
+// import AppLink from '../Link/AppLink'
 import Link from 'next/link'
 
 import styles from './FeaturedItems.module.css'
 
 export default function FeaturedItemsComponent({ items = [] }) {
+  if (!items || !items[0] || !items[0].id) {
+    return <ul></ul>;
+  }
 
-  const markup = items.map((item) => (
+  const { data, loading, error } = getArticles(items);
+
+  if (loading) return 'Loading';
+  if (error) return '[Error]';
+
+  const markup = data.map((item) => (
     <li className={styles.item} key={item.id}>
       <span className={styles.image}>
         <img className="coverImageSmall" src={`https://dummyimage.com/120x160/aaa/fff.png&text=${item.id}`} />

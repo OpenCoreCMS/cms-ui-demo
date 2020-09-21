@@ -38,8 +38,8 @@ export default function JournalItemPageRender({ journalData }) {
             <div>
               <h3>Recent articles</h3>
               <GridLayoutTwoColumnsEven>
-                <div><FeaturedItems items={['57162']}></FeaturedItems></div>
-                <div><FeaturedItems items={['57162']}></FeaturedItems></div>
+                <div><FeaturedItems items={[{id: '123'}]} /></div>
+                <div><FeaturedItems items={[{id: '123'}]} /></div>
 
               </GridLayoutTwoColumnsEven>
             </div>
@@ -50,12 +50,12 @@ export default function JournalItemPageRender({ journalData }) {
             <GridLayoutTwoColumnsEven>
               <div>
                 <h3>Most read</h3>
-                <FeaturedItems></FeaturedItems>
+                <div><FeaturedItems items={[{id: '123'}]} /></div>
               </div>
 
               <div>
                 <h3>Most cited</h3>
-                <FeaturedItems></FeaturedItems>
+                <div><FeaturedItems items={[{id: '123'}]} /></div>
               </div>
             </GridLayoutTwoColumnsEven>
 
