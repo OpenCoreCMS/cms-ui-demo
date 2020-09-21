@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-undef
-const axios = require('axios');
+import axios from 'axios';
 const bffBaseUrl = 'http://localhost:4000/api';
 
 export default function handler(req, res) {
