@@ -4,7 +4,7 @@
 
 **This application requires an OPP BFF instance to use as data source.**
 
-See [**OPP BFF** demo repo](https://github.com/OpenPublishingPlatform/opp-bff-demo)
+See [**OPP BFF** repo](https://github.com/OpenPublishingPlatform/opp-bff)
 and follow the instructions there before running **OPP UI** application.
 
 
