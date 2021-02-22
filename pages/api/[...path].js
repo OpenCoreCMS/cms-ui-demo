@@ -14,7 +14,7 @@ function constructQueryString(qs) {
   return qsElements.length ? `?${qsElements.join('&')}` : '';
 }
 
-// Catch-all proxy for requests to OPP BFF
+// Catch-all proxy for requests to OCC API
 export default function handler(req, res) {
   const urlSegments = req.query.path.map((x) => {
     return encodeURIComponent(x);

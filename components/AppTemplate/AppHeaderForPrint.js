@@ -8,7 +8,7 @@ export default function AppFooterPrintComponent() {
 
   return <header className={AppCommonStyles.printHeader}>
     <div className="pinned">
-      <p><img className={AppCommonStyles.brandLogo} src="/public/oppdp-full-logo-grey.png" alt="OPP Demo Platform logo" /></p>
+      <p><img className={AppCommonStyles.brandLogo} src="/public/OpenCoreCMSIcon-64.png" alt="Open Core CMS logo" /></p>
       <p><strong>This page has been retrieved on:</strong> {(new Date).toLocaleString()}.</p>
       <p><strong>Page URL:</strong> https://localhost:3000{pathname}</p>
     </div>

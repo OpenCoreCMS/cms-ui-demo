@@ -10,7 +10,7 @@ import ListOfResultsAsideFilters from '../../../components/Blocks/ListOfResultsA
 
 export default function SubjectListingPageRender({searchResults, subjectData}) {
   return (
-    <AppTemplate title={`${subjectData.name} - Current issue - OPP Demo`}>
+    <AppTemplate title={`${subjectData.name} - Current issue - Open Core CMS Demo`}>
       <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>{subjectData.name} content listing</h1>

@@ -4,7 +4,7 @@ import AppTemplate from '../../components/AppTemplate/AppTemplate'
 
 export default function SignInPageRender({ currentUserData = {} }) {
   return (
-    <AppTemplate title="Sign in - OPP UI Demo">
+    <AppTemplate title="Sign in - Open Core CMS UI Demo">
       <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>User page</h1>

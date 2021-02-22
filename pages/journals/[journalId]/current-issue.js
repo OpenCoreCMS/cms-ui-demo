@@ -19,7 +19,7 @@ export default function JournalItemCurrentIssuePageRender({searchResults}) {
   }
 
   return (
-    <AppTemplate title={`${journalData.name} - Current issue - OPP Demo`}>
+    <AppTemplate title={`${journalData.name} - Current issue - Open Core CMS Demo`}>
       <JournalMasthead journalData={journalData}></JournalMasthead>
 
       <main>

@@ -11,7 +11,7 @@ import DataFeed from '../../../components/Blocks/DataFeed'
 
 export default function JournalItemPageRender({ journalData }) {
   return (
-    <AppTemplate title={`${journalData.name} - Journal home - OPP Demo`}>
+    <AppTemplate title={`${journalData.name} - Journal home - Open Core CMS Demo`}>
       <JournalMasthead journalData={journalData}></JournalMasthead>
 
       <main>

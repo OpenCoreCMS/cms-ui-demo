@@ -8,7 +8,7 @@ export default function AppHeaderComponent() {
       <div className="flexContainer">
         <nav className={AppCommonStyles.navLeft} role="navigation" aria-label="Main">
           <AppLink href="/" className={AppCommonStyles.navItem}>
-              <img className={AppCommonStyles.brandLogo} src="/public/oppdp-full-logo-blue.png" alt="OPP Demo Platform logo" />
+              <img className={AppCommonStyles.brandLogo} src="/public/OpenCoreCMSIcon-64.png" alt="Open Core CMS logo" />
           </AppLink>
 
           <span className={AppCommonStyles.pipe}></span>

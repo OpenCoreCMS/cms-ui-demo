@@ -7,7 +7,7 @@ import AppBreadcrumbs from './AppBreadcrumbs'
 
 export default function AppTemplateComponent({
   children,
-  title = 'OPP Demo',
+  title = 'Open Core CMS Demo',
   theme = 'default',
   pageType = '',
   url = ''

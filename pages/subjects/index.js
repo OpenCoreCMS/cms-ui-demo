@@ -4,11 +4,11 @@ import AppTemplate from '../../components/AppTemplate/AppTemplate'
 
 export default function SubjectsIndexPageRender({ allSubjectsData }) {
   return (
-    <AppTemplate title="Subjects - OPP UI Demo">
+    <AppTemplate title="Subjects - Open Core CMS UI Demo">
       <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>Subjects</h1>
-          <p>In the OPP UI Demo site we have indexed the following subjects.</p>
+          <p>In the Open Core CMS Demo site we have indexed the following subjects.</p>
         </div>
       </div>
 

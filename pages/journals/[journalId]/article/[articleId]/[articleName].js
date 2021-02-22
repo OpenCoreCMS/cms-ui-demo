@@ -9,7 +9,7 @@ import DisplayHTML from '../../../../../components/CommonElements/DisplayHTML'
 
 export default function JournalArticlePageRender({ journalData = {}, articleData = {} }) {
   return (
-    <AppTemplate title={`${articleData.title} - OPP Demo`} pageType="article" theme="default">
+    <AppTemplate title={`${articleData.title} - Open Core CMS Demo`} pageType="article" theme="default">
 
       <main>
         <GridLayoutThreeColumnsOdd>

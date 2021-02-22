@@ -1,19 +1,19 @@
-# Open Publishing Platform UI Demo
+# Open Core CMS UI Demo
 
-**OPP UI** application is a demo site to showcase the Open Publishing Platform.
+**Open Core CMS UI** application is a demo site to showcase the Open Core CMS.
 
-**This application requires an OPP BFF instance to use as data source.**
+**This application requires an Open Core CMS API instance to use as data source.**
 
-See [**OPP BFF** repo](https://github.com/OpenPublishingPlatform/opp-bff)
-and follow the instructions there before running **OPP UI** application.
+See [**Open Core CMS API** repo](https://github.com/OpenCoreCMS/cms-api)
+and follow the instructions there before running **CMS UI** application.
 
 
 ## Quick start
 
 ```
 # 1. Clone the repo
-git clone https://github.com/OpenPublishingPlatform/opp-ui-demo.git
-cd opp-ui-demo
+git clone https://github.com/OpenCoreCMS/cms-ui-demo.git
+cd cms-ui-demo
 
 # 2. Install dependencies
 npm install
@@ -22,9 +22,9 @@ npm install
 npm run dev
 ```
 
-**OPP UI** application will start on [localhost:3000](http://localhost:3000).
+**Open Core CMS UI** application will start on [localhost:3000](http://localhost:3000).
 
 
 ## Configuration
 
-**OPP UI** application does not currently take any configuration.
+**Open Core CMS UI** application does not currently take any configuration.

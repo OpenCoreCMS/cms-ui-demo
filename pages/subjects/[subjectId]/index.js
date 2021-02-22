@@ -8,7 +8,7 @@ import AppLink from '../../../components/Link/AppLink'
 
 export default function SubjectsIndexPageRender({ subjectData }) {
   return (
-    <AppTemplate title={`Subject - ${subjectData.name} - OPP UI Demo`}>
+    <AppTemplate title={`Subject - ${subjectData.name} - Open Core CMS UI Demo`}>
       <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>{subjectData.name}</h1>

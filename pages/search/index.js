@@ -12,7 +12,7 @@ export default function SearchPageRender({ searchResults }) {
   const { phrase } = router.query;
 
   return (
-    <AppTemplate title={`Search results for "${phrase}" - OPP Demo`}>
+    <AppTemplate title={`Search results for "${phrase}" - Open Core CMS Demo`}>
       <div className="mastheadContainer">
         <div className="maxWidthLimitedContainer">
           <h1>Search results</h1>

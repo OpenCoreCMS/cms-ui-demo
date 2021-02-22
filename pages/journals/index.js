@@ -4,13 +4,13 @@ import AppTemplate from '../../components/AppTemplate/AppTemplate'
 
 export default function JournalIndexPageRender({ allJournals }) {
   return (
-    <AppTemplate title="Our journals - OPP Demo">
+    <AppTemplate title="Our journals - Open Core CMS Demo">
       <div className="mastheadContainer" role="banner">
         <div className="maxWidthLimitedContainer">
           <h1>
             Journal content
           </h1>
-          <p>In the Open Publishing Platform demo site we publish
+          <p>In this demo site we publish
           Open Access content made available by other publishers.</p>
         </div>
       </div>

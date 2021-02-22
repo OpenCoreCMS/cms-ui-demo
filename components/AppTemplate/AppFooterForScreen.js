@@ -39,8 +39,8 @@ export default function AppFooterComponent() {
 
         <nav className={AppCommonStyles.navRight}>
           <span className={AppCommonStyles.pipe}></span>
-          <ExternalLink className={`linkExternal ${AppCommonStyles.navItem}`} href="https://OpenPublishingPlatform.com" title="Open Publishing Platform">
-            Powered by OPP
+          <ExternalLink className={`linkExternal ${AppCommonStyles.navItem}`} href="https://OpenCoreCMS.com" title="Open Core CMS">
+            Powered by Open Core CMS
           </ExternalLink>
         </nav>
       </div>
