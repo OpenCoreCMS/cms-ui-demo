@@ -3,7 +3,7 @@
 }
 
 .main {
-  background-image: url('/public/splash-photos/pexels-juan-733475-w2000.jpg');
+  background-image: url('../public/public/splash-photos/pexels-juan-733475-w2000.jpg');
   background-size: cover;
   background-position: top center;
   justify-content: center;
