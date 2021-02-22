@@ -7,9 +7,9 @@ export default function HomePageRender() {
     <AppTemplate title="Home - Open Core CMS Demo" pageType="homepage" theme="default">
       <main className={styles.main}>
         <div className="maxWidthLimitedContainer textCenter">
-          <img src="/public/OpenCoreCMSIcon-500.png" height="180" alt="Open Core CMS logo" />
-          <br />
           <h1 className={styles.title}>
+            <img src="/public/OpenCoreCMSIcon-500.png" height="120" alt="Open Core CMS logo" />
+            <br />
             Open Core CMS Demo
           </h1>
 
