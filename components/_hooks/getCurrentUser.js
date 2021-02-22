@@ -13,7 +13,7 @@ export default function getCurrentUser(init) {
   const prevInit = useRef();
   const prevUrl = useRef();
 
-  const url = 'http://localhost:3000/api/v1/users/getCurrentUser';
+  const url = `/api/v1/users/getCurrentUser`;
 
   useEffect(() => {
   // Only refetch if url or init params change.

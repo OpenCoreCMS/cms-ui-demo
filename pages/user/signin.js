@@ -38,7 +38,7 @@ export default function SignInPageRender() {
 }
 
 export async function getServerSideProps(ctx) {
-  const targetUrl = `http://localhost:3000/api/v1/users/getCurrentUser`;
+  const targetUrl = `${process.env.OCC_UI_URL}/api/v1/users/getCurrentUser`;
   const currentCookie = _.get(ctx, 'req.headers.cookie');
   const headers = currentCookie ? { cookie: currentCookie } : undefined;
 

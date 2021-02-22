@@ -158,7 +158,7 @@ export async function getInitialProps() {
 }
 
 export async function getServerSideProps(ctx) {
-  const apiBase = 'http://localhost:3000';
+  const apiBase = process.env.OCC_UI_URL;
   const articleId = ctx.params.articleId;
   const journalId = ctx.params.journalId;
   const requestUrl = ctx.req.url;

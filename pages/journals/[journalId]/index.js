@@ -87,7 +87,7 @@ export async function getServerSideProps({ params }) {
   const journalId = params.journalId;
 
   const { data } = await axios.get(
-    `http://localhost:3000/api/v1/publications/journals/${journalId}/getJournal`
+    `${process.env.OCC_UI_URL}/api/v1/publications/journals/${journalId}/getJournal`
   );
   // console.log(data);
   return {

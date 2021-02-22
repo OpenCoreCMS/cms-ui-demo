@@ -36,7 +36,7 @@ export default function JournalIndexPageRender({ allJournals }) {
 
 export async function getServerSideProps({ query }) {
   const phrase = query.phrase;
-  let targetUrl = `http://localhost:3000/api/v1/publications/journals/getAllJournals`;
+  let targetUrl = `${process.env.OCC_UI_URL}/api/v1/publications/journals/getAllJournals`;
   if (typeof phrase === 'string' && phrase.length) {
     targetUrl += `?phrase=${phrase}`;
   }

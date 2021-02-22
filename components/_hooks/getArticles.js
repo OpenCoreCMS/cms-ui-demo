@@ -14,7 +14,7 @@ export default function getArticles(items, init) {
   const prevUrl = useRef();
   console.log('items 2', items);
   const articleId = items[0].id;
-  const url = `http://localhost:3000/api/v1/publications/journals/articles/${articleId}/getArticle`;
+  const url = `${process.env.OCC_UI_URL}/api/v1/publications/journals/articles/${articleId}/getArticle`;
 
   useEffect(() => {
   // Only refetch if url or init params change.

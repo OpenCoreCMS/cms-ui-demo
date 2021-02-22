@@ -39,7 +39,7 @@ export async function getServerSideProps({ params }) {
   const subjectId = params.subjectId;
 
   const { data } = await axios.get(
-    `http://localhost:3000/api/v1/publications/search?type=article&subjectId=${subjectId}`
+    `${process.env.OCC_UI_URL}/api/v1/publications/search?type=article&subjectId=${subjectId}`
   );
   // console.log(data);
   return {

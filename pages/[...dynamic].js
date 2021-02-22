@@ -83,12 +83,12 @@ export async function getServerSideProps({ params }) {
   const fullPath = urlSegments.join('/');
   const fullPathAutoprefixed = fullPath.startsWith('/') ? fullPath : `/${fullPath}`;
   const escapedFullPath = encodeURIComponent(fullPathAutoprefixed);
-
+  // console.log('escapedFullPath', escapedFullPath);
   if (fullPath.includes('favicon')) {
     return { props: {pageData: {}}};
   }
 
-  const targetUrl = `http://localhost:3000/api/v1/pages/getPage/${escapedFullPath}`;
+  const targetUrl = `${process.env.OCC_UI_URL}/api/v1/pages/getPage/${escapedFullPath}`;
   // console.log('targetUrl', targetUrl);
 
   const { data } = await axios.get(targetUrl);

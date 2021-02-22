@@ -32,7 +32,7 @@ export default function SubjectsIndexPageRender({ allSubjectsData }) {
 
 
 export async function getServerSideProps() {
-  let targetUrl = `http://localhost:3000/api/v1/publications/subjects/getAllSubjects`;
+  let targetUrl = `${process.env.OCC_UI_URL}/api/v1/publications/subjects/getAllSubjects`;
 
   const { data } = await axios.get(targetUrl);
   // console.log(data);

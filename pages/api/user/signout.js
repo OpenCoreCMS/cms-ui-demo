@@ -1,5 +1,5 @@
 import axios from 'axios';
-const bffBaseUrl = 'http://localhost:4000/api';
+const bffBaseUrl = `${process.env.OCC_API_URL}/api`;
 
 export default function handler(req, res) {
   const fullUrl = `${bffBaseUrl}/v1/users/logout`;

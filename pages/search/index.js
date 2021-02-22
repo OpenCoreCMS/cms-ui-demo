@@ -54,7 +54,7 @@ export async function getServerSideProps({ query }) {
   const pageNumber = query.pageNumber || 1;
   const pageSize = query.pageSize || 10;
 
-  const targetUrl = `http://localhost:3000/api/v1/publications/search?phrase=${phrase}&pageNumber=${pageNumber}&pageSize=${pageSize}`;
+  const targetUrl = `${process.env.OCC_UI_URL}/api/v1/publications/search?phrase=${phrase}&pageNumber=${pageNumber}&pageSize=${pageSize}`;
 
   const { data } = await axios.get(targetUrl);
 
