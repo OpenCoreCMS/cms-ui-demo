@@ -17,7 +17,7 @@ h3 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.3rem; }
 h4 { margin: 0 0 1rem; line-height: 1.15; font-size: 1.1rem; }
 
 /* basic elements*/
-input { background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 10px }
+input { background: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 10px; -webkit-appearance:none; }
 input[type=button], input[type=submit], button { background: #004e90; color: white; border: 1px solid #ccc; border-radius: 4px; padding: 6px 10px }
 
 label > span {display: block; font-weight: 600; color: #444;}
