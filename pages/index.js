@@ -29,9 +29,9 @@ export default function HomePageRender() {
             </a>
 
             <a href="/help/about" className={styles.card}>
-              <h2>Learn more &rsaquo;</h2>
+              <h2>Using Open Core CMS &rsaquo;</h2>
               <p>
-                Open Core CMS can be a great fit for&nbsp;
+                Open Core CMS is a great fit for&nbsp;
                 <a href="#">publishers</a> and <a href="#">content creators</a>
               </p>
             </a>
