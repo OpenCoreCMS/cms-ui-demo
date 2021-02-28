@@ -25,8 +25,8 @@ export default function handler(req, res) {
   return axios(axiosProxyConfig)
     .then(function (response) {
       const responseCookies = response.headers['set-cookie'];
-      res.setHeader('Set-Cookie', responseCookies[0])
-      // res.setHeader('Set-Cookie', `OPP_Session=${sessionId}; HttpOnly; Secure`)
+      const foundOccCookie = (responseCookies.filter(x => { return x.startsWith('OCC_SID=')}))[0];
+      res.setHeader('Set-Cookie', foundOccCookie);
 
       return res.redirect('/user');
     })
